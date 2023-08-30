@@ -1,0 +1,163 @@
+@charset "UTF-8"; 
+
+:root{
+    --cor0: #f5faf7;
+    --cor1: #979393;
+    --cor2: #e71111;
+    --cor3: #070707;
+    --cor4: #c0b184;
+
+    --fonte-padrao: arial, verdana, helvetica, sans-serif;
+    --fonte-destaque:'Sedgwick Ave Display', cursive;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+header{
+    background-image: linear-gradient(to bottom, var(--cor1), var(--cor3));
+    width: 100%;
+    padding-top: 40px;
+    min-height: 150px;
+    
+}
+
+header > h1{
+    font-family: var(--fonte-destaque);
+    color: var(--cor4);
+    text-align: center;
+    font-weight: normal;
+    font-size: 3em;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.73);}
+
+    header > P{
+        text-align: center;
+        font-family: var(--fonte-padrao);
+        font-size: 1em;
+        color: white;
+        max-width: 920px;
+        margin: auto;
+        padding-right: 15px;
+        padding-left: 20px;
+        text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.373);
+    }
+    p.personagem{
+        font-family: var(--fonte-destaque);
+        color: var(--cor3);
+    }
+
+    
+
+    body{
+        background-image: url(artes/city2.jfif);
+    }
+    main{
+        
+        min-width: 25%;     
+        max-width: 100%;        
+        height: 10%;
+        padding: 20%;
+        padding-top: 20px;
+        box-shadow: 4px 4px 9px 0px rgb(0, 0, 0, 0.315);
+        }
+
+        h2#Personagens{
+            max-width: 700px;
+            background-color: var(--cor1); opacity: 0.8;
+            font-family: var(--fonte-destaque);
+            text-align: center ;
+        }
+      
+        div{
+            vertical-align:bottom;
+            display: inline-block;
+            height: 152px;
+            width: 169px;
+           
+            }
+        
+        div.personagem{
+            vertical-align:bottom;
+            background-color: var(--cor1); opacity: 0.8;
+            display: inline-block;
+            text-align: center;
+            height: 190px;
+            width: 172px;
+            
+            }
+    
+
+        img{
+            width: 85%;
+            padding-left: 10px;
+        }    
+        img.paginaInicial{
+            margin-right:20px;
+            width:85%;
+            padding-top: 10px;
+                     }
+        
+    
+        
+     div.target-container:hover{
+               
+                background-color: var(--cor4);
+            }
+
+    div.personagem:hover > p{
+                font-family:var(--fonte-padrao);
+                text-align: left;
+                font-size: small;
+                display: block;
+                color: rgb(10, 10, 10); opacity: 1;
+                background-color: var(--cor4);
+                width: 172px;
+                    }
+
+    img#selectedImage{
+            opacity: 1;
+    }
+                    
+        p.discricao{
+                        color: white; opacity: 0;
+                    }
+         
+                    
+    
+     dd{
+        padding-left: 10px;
+        padding-top: 26px;
+        height: 1px;
+        box-shadow: 0px 7px 7px rgb(0, 0, 0, o.315);
+    
+     }
+
+     dd > a:hover {
+        background-color: var(--cor3);
+        color: var(--cor4);
+        
+    }
+
+    dd > a{
+       
+        
+        text-decoration: none;
+        color: var(--cor0);
+        font-weight: bold;
+        transition-duration: 0.5s;
+    }
+    footer{
+        padding-top:20px;
+        background-color: #070707;
+        color: white;
+        text-align: center;
+        font-size: 1.1em;
+        height:70px;
+    }
+    nav{
+        background-color: var(--cor1); opacity: 0.8;
+        width: 169px;
+        height: 364px;
+    }
+    
