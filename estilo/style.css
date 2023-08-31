@@ -1,5 +1,12 @@
 @charset "UTF-8"; 
 
+
+@font-face {
+    font-family: 'Sedgwick Ave Display';
+    src: url(fontes/SedgwickAveDisplay-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;}
+
 :root{
     --cor0: #f5faf7;
     --cor1: #979393;
@@ -15,6 +22,7 @@
     margin: 0px;
     padding: 0px;
 }
+
 header{
     background-image: linear-gradient(to bottom, var(--cor1), var(--cor3));
     width: 100%;
@@ -105,7 +113,10 @@ header > h1{
                 background-color: var(--cor4);
             }
 
-    div.personagem:hover > p{
+    div.personagem:hover{
+        background-color: var(--cor4);
+    }
+    div.personagem:hover>div.discricao>p{
                 font-family:var(--fonte-padrao);
                 text-align: left;
                 font-size: small;
@@ -113,7 +124,7 @@ header > h1{
                 color: rgb(10, 10, 10); opacity: 1;
                 background-color: var(--cor4);
                 width: 172px;
-                    }
+    }
 
     img#selectedImage{
             opacity: 1;
@@ -122,6 +133,9 @@ header > h1{
         p.discricao{
                         color: white; opacity: 0;
                     }
+        p.vida{
+            text-align: center;
+        }
          
                     
     
@@ -157,7 +171,9 @@ header > h1{
     }
     nav{
         background-color: var(--cor1); opacity: 0.8;
-        width: 169px;
+        width: 180px;
         height: 364px;
     }
+    
+  
     
