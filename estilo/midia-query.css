@@ -39,9 +39,21 @@
       }
         
       div.target-container{
-        padding-left:11px;
+        padding-left:10%;
     }
     nav{
-        width: 190px;
-        height: 364px;
+        width: 60%;
+        height:500px
+        
+}
+
+dd{
+    padding-top:25%;
+}
+
+footer{
+    text-align:center;
+    padding-top:5%;
+    
+    
 }
