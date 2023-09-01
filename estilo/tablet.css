@@ -96,21 +96,26 @@ header > h1{
     
 
         img{
-            width: 85%;
-            padding-left: 10px;
+            width: 100%;
+          
+         
         }    
         img.paginaInicial{
             margin-right:20px;
             width:85%;
             padding-top: 10px;
                      }
-        
+       
     
         
      div.target-container:hover{
                
                 background-color: var(--cor4);
             }
+div.target-container{
+    padding-left:100px;
+}
+
 
     div.personagem:hover{
         background-color: var(--cor4);
@@ -125,14 +130,13 @@ header > h1{
                 width: 172px;
     }
 
-    img#selectedImage{
-            opacity: 1;
-    }
+  
                     
         p.discricao{
                         color: white; opacity: 0;
                     }
         p.vida{
+            font-size:2em;
             text-align: center;
         }
          
@@ -141,8 +145,8 @@ header > h1{
      dd{
         width: 100%;
         padding-left: 10%;
-        padding-top: 25%;
-        height: 1px;
+        padding-top: 20%;
+        height: 20px;
         
     
      }
@@ -155,7 +159,7 @@ header > h1{
 
     dd > a{
        
-        
+        font-size:2em;
         text-decoration: none;
         color: var(--cor0);
         font-weight: bold;
@@ -171,9 +175,6 @@ header > h1{
     }
     nav{
         background-color: var(--cor1); opacity: 0.8;
-        width: 180px;
-        height: 500px;
+        width: 50%;
+        height: 912px;
     }
-    
-  
-    

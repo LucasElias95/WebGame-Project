@@ -11,4 +11,3 @@ if (imageUrl) {
   selectedImage.src = imageUrl;
 }
 
-  

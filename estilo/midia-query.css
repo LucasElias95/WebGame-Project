@@ -1,6 +1,12 @@
+/*320px — 480px: dispositivos móveis.
+481px — 768px: iPads, tablets.
+769px — 1024px: telas pequenas, laptops.
+1025px — 1200px: desktops, telas grandes.
+1201px e acima — telas muito grandes, TVs.
+*/
 @charset "UTF-8";
 
-@media screen and (max-width: 1183px){
+@media  (max-width: 1183px){
 
     h2.personagens{
         margin-left: -50px;
@@ -38,18 +44,14 @@
         margin-top: 10px; /* Create a small gap between image and text */
       }
         
-      div.target-container{
-        padding-left:10%;
-    }
+      
+    
     nav{
-        width: 60%;
+        width: 40%;
         height:500px
         
 }
 
-dd{
-    padding-top:25%;
-}
 
 footer{
     text-align:center;
