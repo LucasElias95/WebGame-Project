@@ -1,13 +1,16 @@
-function transferImage(clickedElement) {
-  const sourceImage = clickedElement.querySelector('img');
-  const imageUrl = sourceImage.src;
+function toggleDescription(element) {
+  const descricao = element.querySelector('.discricao');
+  descricao.classList.toggle('show-description');
+}
 
-  // Armazenar o URL da imagem no LocalStorage
+
+function transferImage(imageUrl) {
   localStorage.setItem('selectedImage', imageUrl);
 }
+
 const selectedImage = document.getElementById('selectedImage');
 const imageUrl = localStorage.getItem('selectedImage');
+
 if (imageUrl) {
   selectedImage.src = imageUrl;
 }
-
