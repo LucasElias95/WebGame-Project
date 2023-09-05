@@ -22,6 +22,17 @@
         
     }
 
+    
+  div.estatisticas {
+    position: absolute;
+    left: 220px; 
+    width: 30%;
+    height: 30%;
+    background-color: var(--cor1);
+    opacity: 0.8;
+}
+   
+
     .paginaInicial {
         width: 40%;
     }

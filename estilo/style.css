@@ -62,12 +62,15 @@ header > h1{
     }
     main{
         
-        min-width: 25%;     
-        max-width: 100%;        
-        height: 10%;
-        padding: 20%;
-        padding-top: 20px;
-        box-shadow: 4px 4px 9px 0px rgb(0, 0, 0, 0.315);
+min-width: 25%;
+        
+max-width: 100%;
+        
+height: 10%;
+        
+padding-top:1px;
+        
+box-shadow: 4px 4px 9px 0px rgb(0, 0, 0, 0.315);
         }
 
         h2.personagens{
@@ -77,11 +80,10 @@ header > h1{
             text-align: center ;
         }
       
-        div{
-            vertical-align:bottom;
-            height: 152px;
+        div.target-container{
+            height: 159px;
             width: 169px;
-           
+            padding-left:6%;
             }
         
         div.personagem{
@@ -93,25 +95,19 @@ header > h1{
             width: 172px;
             
             }
+        
     
 
-        img{
-            width: 85%;
-            padding-left: 10px;
-        }    
+       
+        
         img.paginaInicial{
             margin-right:20px;
             width:85%;
             padding-top: 10px;
+            padding-left: 10px;
                      }
-        
     
-        
-     div.target-container:hover{
-               
-                background-color: var(--cor4);
-            }
-
+    
     div.personagem:hover{
         background-color: var(--cor4);
     }
@@ -124,10 +120,6 @@ header > h1{
                 background-color: var(--cor4);
                 width: 172px;
     }
-
-    img#selectedImage{
-            opacity: 1;
-    }
                     
         p.discricao{
                         color: white; opacity: 0;
@@ -136,7 +128,15 @@ header > h1{
             text-align: center;
         }
          
-                    
+    nav {
+    padding-left:0px;
+    background-color: var(--cor1);
+    opacity: 0.8;
+    width: 200px;
+    height: 535px;
+    float: left; /* Adicione esta propriedade para manter o nav à esquerda */
+}
+        
     
      dd{
         width: 100%;
@@ -161,20 +161,33 @@ header > h1{
         font-weight: bold;
         transition-duration: 0.5s;
     }
-    footer{
-        padding-top:20px;
-        background-color: #070707;
-        color: white;
-        text-align: center;
-        font-size: 1em;
-        height:70px;
-    }
-    nav{
-        background-color: var(--cor1);
-        opacity: 0.8;
-        width: 200px;
-        height: 535px;
-    }
     
-  
+
+  div.estatisticas {
+    position: absolute;
+    top: 35%;
+    /* Altere o valor de left para alinhar horizontalmente com o nav */
+    left: 220px; /* Este valor pode ser ajustado conforme necessário */
+    width: 30%;
+    height: 30%;
+    background-color: var(--cor1);
+    opacity: 0.8;
+}
+    p.estatisticas{
+        text-align: left;
+        color: var(--cor0);
+        padding-top: 10%;
+        padding-left: 10%;
+    }
+
+    footer {
+    clear: both; /* Adicione esta propriedade */
+    padding-top: 20px;
+    background-color: #070707;
+    color: white;
+    text-align: center;
+    font-size: 1em;
+    height: 70px;
+}
+
     

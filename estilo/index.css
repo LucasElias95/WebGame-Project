@@ -77,11 +77,10 @@ header > h1{
             text-align: center ;
         }
       
-        div{
-            vertical-align:bottom;
-            height: 152px;
+        div.target-container{
+            height: 159px;
             width: 169px;
-           
+            padding-left:6%;
             }
         
         div.personagem{
@@ -93,30 +92,19 @@ header > h1{
             width: 172px;
             
             }
+        
     
 
-        img{
-            width: 100%;
-          
-         
-        }    
+       
+        
         img.paginaInicial{
             margin-right:20px;
             width:85%;
             padding-top: 10px;
+            padding-left: 10px;
                      }
-       
     
-        
-     div.target-container:hover{
-               
-                background-color: var(--cor4);
-            }
-div.target-container{
-    padding-left:100px;
-}
-
-
+    
     div.personagem:hover{
         background-color: var(--cor4);
     }
@@ -129,24 +117,27 @@ div.target-container{
                 background-color: var(--cor4);
                 width: 172px;
     }
-
-  
                     
         p.discricao{
                         color: white; opacity: 0;
                     }
         p.vida{
-            font-size:2em;
             text-align: center;
         }
          
-                    
+        nav{
+            background-color: var(--cor1);
+            opacity: 0.8;
+            width: 200px;
+            height: 535px;
+        }
+        
     
      dd{
         width: 100%;
-        padding-left: 10%;
-        padding-top: 20%;
-        height: 20px;
+        padding-left: 5%;
+        padding-top: 25%;
+        height: 1px;
         
     
      }
@@ -159,22 +150,34 @@ div.target-container{
 
     dd > a{
        
-        font-size:2em;
+        
         text-decoration: none;
         color: var(--cor0);
         font-weight: bold;
         transition-duration: 0.5s;
     }
+    
+
+    div.estatisticas{
+        position: absolute;
+        top:35%;
+        left:37%;
+        width:30%;
+        height:30%;
+        background-color: var(--cor1); opacity: 0.8;
+    }
+    p.estatisticas{
+        text-align: left;
+        color: var(--cor0);
+        padding-top: 10%;
+        padding-left: 10%;
+    }
+
     footer{
         padding-top:20px;
         background-color: #070707;
         color: white;
         text-align: center;
-        font-size: 1.1em;
+        font-size: 1em;
         height:70px;
-    }
-    nav{
-        background-color: var(--cor1); opacity: 0.8;
-        width: 50%;
-        height: 912px;
     }
