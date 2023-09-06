@@ -92,7 +92,7 @@ header > h1{
             
             }
         
-        img.paginaInicial{
+        img{
             margin-right:20px;
             width:85%;
             padding-top: 10px;
@@ -169,10 +169,10 @@ header > h1{
 
     div.crimes{
         position: absolute;
-        top: 30%;
-        left: 220px; 
+        top: 35%;
+        left: 200px; 
         width: 40%;
-        height: 35%;
+        height: 25%;
         background-color: var(--cor1);
         opacity: 0.8;
     }
@@ -195,10 +195,10 @@ header > h1{
 
     div.crimesGangue{
         position: absolute;
-        top: 67%;
-        left: 220px; 
+        top: 62%;
+        left: 200px; 
         width: 40%;
-        height: 35%;
+        height: 25%;
         background-color: var(--cor1);
         opacity: 0.8;
     }
