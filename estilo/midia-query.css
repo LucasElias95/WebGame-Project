@@ -25,11 +25,18 @@
     
   div.estatisticas {
     position: absolute;
-    left: 220px; 
-    width: 30%;
-    height: 30%;
+    top: 37%;
+    left: 220px;
+    width: 35%;
+    height: 50%;
     background-color: var(--cor1);
     opacity: 0.8;
+}
+p.estatisticas {
+    text-align: left;
+    color: var(--cor0);
+    padding-top: 20%;
+    padding-left: 10%;
 }
    
 
