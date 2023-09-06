@@ -18,7 +18,7 @@
         <div class="target-container" id="targetDiv">
            
             <a href="estatisticas.html"><img id="selectedImage" src="" alt="Imagem Selecionada"></a>
-            </p><p class ="vida">Vida: </p>
+            </p><p class ="vida">Vida: </p> <p class="dinheiro">Dinheiro R$<span id="dinheiro">0</span></p>
             </div>    
         <dl>
             <dd><a href="missoes.html">🎯 Missões</a></dd>
@@ -36,11 +36,11 @@
             <label for="lang">Crime</label>
             <select name="crimeSolo" id="solo">
                 <option value="none">None</option>
-              <option value="php">Assaltar alguém na rua</option>
-              <option value="javascript">Roubar loja de convenicecia</option>
-              <option value="java">Roubar uma casa</option>
-              <option value="golang">Roubar carro</option>
-              <option value="python">Roubar joalheria</option>>
+              <option value="rua">Assaltar alguém na rua</option>
+              <option value="conveniencia">Roubar loja de convenicecia</option>
+              <option value="casa">Roubar uma casa</option>
+              <option value="carro">Roubar carro</option>
+              <option value="joalheria">Roubar joalheria</option>>
             </select> <br>
             <input type="submit" value="Cometer crime" />
       </form>
@@ -51,11 +51,11 @@
             <label for="lang">Crime</label>
             <select class="gange" name="crimeGangue" id="gang">
                 <option value="none">None</option>
-              <option value="php">Explodir caixa eletronico</option>
-              <option value="javascript">Roubar Consecionaria de carros</option>
-              <option value="java">Roubar Carro Forte</option>
-              <option value="golang">Roubar Super Mercado</option>
-              <option value="python">Roubar Banco</option>>
+              <option value="caixa">Explodir caixa eletronico</option>
+              <option value="consecionaria">Roubar Consecionaria de carros</option>
+              <option value="carroForte">Roubar Carro Forte</option>
+              <option value="superMercado">Roubar Super Mercado</option>
+              <option value="banco">Roubar Banco</option>>
             </select> <br>
             <input class="gangue" type="submit" value="Cometer crime" />
       </form>
@@ -66,4 +66,5 @@
         </footer>
 </body>
 <script src="js/main.js"></script>
+<script src="js/crimes.js"></script>
 </html>

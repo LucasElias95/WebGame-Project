@@ -1,3 +1,4 @@
+
 function toggleDescription(element) {
   const descricao = element.querySelector('.discricao');
   descricao.classList.toggle('show-description');
@@ -14,3 +15,4 @@ const imageUrl = localStorage.getItem('selectedImage');
 if (imageUrl) {
   selectedImage.src = imageUrl;
 }
+
