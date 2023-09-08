@@ -4,8 +4,13 @@ function toggleDescription(element) {
   descricao.classList.toggle('show-description');
 }
 
+function novoJogo (){
+  localStorage.clear();
+  
+}
 
 function transferImage(imageUrl) {
+  localStorage.clear
   localStorage.setItem('selectedImage', imageUrl);
 }
 
