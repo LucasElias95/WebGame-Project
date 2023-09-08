@@ -1,3 +1,6 @@
+const imageUrl = localStorage.getItem('selectedImage');
+const selectedImage = document.getElementById('selectedImage');
+
 
 function toggleDescription(element) {
   const descricao = element.querySelector('.discricao');
@@ -10,14 +13,23 @@ function novoJogo (){
 }
 
 function transferImage(imageUrl) {
-  localStorage.clear
   localStorage.setItem('selectedImage', imageUrl);
 }
-
-const selectedImage = document.getElementById('selectedImage');
-const imageUrl = localStorage.getItem('selectedImage');
 
 if (imageUrl) {
   selectedImage.src = imageUrl;
 }
+
+function carregarJogo() {
+  // Verifique se há algum valor no Local Storage
+  if (localStorage.getItem("selectedImage") !== null) {
+    // Se houver um valor, redirecione para a página estatisticas.html
+    window.location.href = "estatisticas.html";
+  } else {
+    // Caso contrário, exiba um alerta
+    alert("Você não possui jogo salvo, para carregar um jogo é necessário começar um antes!");
+  }
+}
+
+
 
