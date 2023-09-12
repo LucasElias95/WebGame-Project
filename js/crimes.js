@@ -47,9 +47,8 @@ document.querySelector('.crimesGangue form').addEventListener('submit', function
 // Verifique se o dinheiro já está armazenado no armazenamento local
 const dinheiroAtual = getDinheiro();
 if (dinheiroAtual === 0) {
-  localStorage.setItem('dinheiro', '1000'); // Defina um valor inicial de dinheiro aqui
+  localStorage.setItem('dinheiro', '0'); // Defina um valor inicial de dinheiro aqui
 }
 
 // Atualize o valor do dinheiro na página
 atualizarDinheiro(dinheiroAtual);
-
