@@ -24,6 +24,17 @@ function atualizarInteligencia(novoValor) {
   const inteligenciaElement = document.getElementById('inteligencia');
   inteligenciaElement.textContent = novoValor;
 }
+// Função para obter o valor atual do forca do armazenamento local
+function getForca() {
+  const str = localStorage.getItem('força');
+  return str ? parseInt(str) : 0;
+}
+// Função para atualizar o valor da força na página e no armazenamento local
+function atualizarForca(novoValor) {
+  localStorage.setItem('força', novoValor.toString());
+  const forcaElement = document.getElementById('força');
+  forcaElement.textContent = novoValor;
+}
 
   
 // Função para atualizar o valor do dinheiro na página
@@ -37,6 +48,7 @@ function atualizarDinheiroNaPagina() {
 window.addEventListener('load', function () {
   atualizarDinheiroNaPagina();
   atualizarInteligencia(getInteligencia()); // Passa o valor da inteligência do armazenamento local
+  atualizarForca(getForca()); // Passa o valor da força do armazenamento local
 });
 
   

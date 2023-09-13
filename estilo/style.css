@@ -294,4 +294,48 @@ div.escola:hover{
     height: 70px;
 }
 
+
+div.sozinho{
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    background-color: var(--cor1);
+    opacity: 0.8;
+    position: absolute;
+    left: 200px;
+    top: 150px;
+   }
+
+div.sozinho:hover{
+    background-color: var(--cor4);
+}           
+div.treinoAcademia{
+text-align: center;
+width: 30%;
+height: 30%;
+background-color: var(--cor1);
+opacity: 0.8;
+position: absolute;
+left: 200px;
+top: 350px;        
+}
+div.treinoAcademia:hover{
+background-color: var(--cor4);
+}
+div.treinoArtesMarciais{
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    background-color: var(--cor1);
+    opacity: 0.8;
+    position: absolute;
+    left: 200px;
+    top: 550px;
+  
+}
+
+div.treinoArtesMarciais:hover{
+background-color: var(--cor4);
+}
+
     

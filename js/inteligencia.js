@@ -4,7 +4,8 @@ const botaoAulaEscola = document.getElementById('aulaEscola');
 const botaoAulaParticular = document.getElementById('aulaParticular');
 const inteligencia = document.getElementById('inteligencia');
 
-const valoresInteligencia = {
+//  VALORES INTELIGÊNCIA
+const atributoInteligencia = {
     'aulaSozinho': 1,
     'aulaEscola': 5,
     'aulaParticular': 10,
@@ -16,16 +17,18 @@ const custoInteligencia = {
     'aulaParticular': -1000,
 }
 
+// Função para obter o valor atual da inteligencia do armazenamento local
 function getInteligencia() {
     const int = localStorage.getItem('inteligencia');
     return int ? parseInt(int) : 0;
 }
-
+// Função para atualizar o valor da inteligencia na página e no armazenamento local
 function atualizarInteligencia(novoValor) {
     localStorage.setItem('inteligencia', novoValor.toString());
     inteligencia.textContent = novoValor;
 }
 
+// Função para obter o valor atual de dinheiro do armazenamento local
 function getDinheiro() {
     const dinheiro = localStorage.getItem('dinheiro');
     return dinheiro ? parseInt(dinheiro) : 0;
@@ -37,10 +40,11 @@ function atualizarDinheiro(novoValor) {
     dinheiroElement.textContent = novoValor;
 }
 
+//BOTÕES INTELIGENCIA
 botaoAulaSozinho.addEventListener('click', function () {
-    const valorDeInteligencia = valoresInteligencia['aulaSozinho'];
+    const atributoDeInteligencia = atributoInteligencia['aulaSozinho'];
     const InteligenciaAtual = getInteligencia();
-    const novaInteligencia = InteligenciaAtual + valorDeInteligencia;
+    const novaInteligencia = InteligenciaAtual + atributoDeInteligencia;
     atualizarInteligencia(novaInteligencia);
 
     // Diminuir o dinheiro
@@ -53,9 +57,9 @@ botaoAulaSozinho.addEventListener('click', function () {
 
 botaoAulaEscola.addEventListener('click', function () {
     if (localStorage.getItem("dinheiro") >= 500) {
-        const valorDeInteligencia = valoresInteligencia['aulaEscola'];
+        const atributoDeInteligencia = atributoInteligencia['aulaEscola'];
     const InteligenciaAtual = getInteligencia();
-    const novaInteligencia = InteligenciaAtual + valorDeInteligencia;
+    const novaInteligencia = InteligenciaAtual + atributoDeInteligencia;
     atualizarInteligencia(novaInteligencia);
 
     // Diminuir o dinheiro
@@ -71,9 +75,9 @@ botaoAulaEscola.addEventListener('click', function () {
 
 botaoAulaParticular.addEventListener('click', function () {
     if (localStorage.getItem("dinheiro") >= 1000) {
-        const valorDeInteligencia = valoresInteligencia['aulaParticular'];
+        const atributoDeInteligencia = atributoInteligencia['aulaParticular'];
     const InteligenciaAtual = getInteligencia();
-    const novaInteligencia = InteligenciaAtual + valorDeInteligencia;
+    const novaInteligencia = InteligenciaAtual + atributoDeInteligencia;
     atualizarInteligencia(novaInteligencia);
 
     // Diminuir o dinheiro
@@ -95,3 +99,5 @@ if (InteligenciaAtual === 0) {
 
 // Atualize a inteligência na página de estatísticas
 atualizarInteligencia(InteligenciaAtual);
+
+
