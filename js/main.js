@@ -20,6 +20,19 @@ if (imageUrl) {
   selectedImage.src = imageUrl;
 }
 
+// Função para verificar se um item já foi comprado
+function itemJaComprado(item) {
+  const itensComprados = JSON.parse(localStorage.getItem('itensComprados')) || [];
+  return itensComprados.includes(item);
+}
+
+// Função para marcar um item como comprado
+function marcarItemComoComprado(item) {
+  const itensComprados = JSON.parse(localStorage.getItem('itensComprados')) || [];
+  itensComprados.push(item);
+  localStorage.setItem('itensComprados', JSON.stringify(itensComprados));
+}
+
 function carregarJogo() {
   // Verifique se há algum valor no Local Storage
   if (localStorage.getItem("selectedImage") !== null) {

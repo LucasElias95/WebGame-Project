@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Missões</title>
+    <title>Mercado de Armas</title>
     <link rel="stylesheet" href="estilo/style.css">
     <link rel="stylesheet" href="estilo/midia-query.css" media="screen and (max-device-width: 1183px)" />
     <link rel="stylesheet" href="estilo/tablet.css" media="screen (min-divice-width:768px) and (max-device-width: 800px)" />
@@ -11,8 +11,8 @@
 
 <body>
     <header>
-        <h1>Missões</h1>
-        <p>Aqui você completará algumas missões para mafias locais e aprendera como seguir em frente na sua vida de crime! <strong>Lembresse que cada missão custa um determindao tempo</strong>.</p>
+        <h1>Mercado de Armas</h1>
+        <p>Aqui você pode comprar armas e equipamentos para aumentar seus poder de fogo e sua resistencia a danos</strong>.</p>
         
     </header>
   
@@ -32,13 +32,50 @@
             <dd><a href="gangue.html">👥 Gangue</a></dd>
         </dl>
            </nav>
+
+    <div class="armas">
+            <h2>Armas</h2>
+        <form action="#" id="comprarArmaForm">
+            <label for="armas">Armas</label>
+        <select name="armas" id="armasSelect">
+            <option value="none">None</option>
+            <option value="soco">Soco Inglês $50</option>
+            <option value="taco">Taco de Beisebol $80</option>
+            <option value="faca">Faca Tatica $100</option>
+            <option value="taurus">Taurus .38 $200</option>
+            <option value="glock">Glock .40 $350</option>
+            <option value="magnun">Magnun 357 $600</option>
+            <option value="desert">Desert Eagle $1500</option>
+            <option value="uzi">Uzi $3000</option>>
+            <option value="mp5">MP5 $6000</option>
+            <option value="762">Fuzil 762 $15000</option>
+            <option value="ak47">AK 47 $20000</option>
+            <option value="ar15">AR 15 $35000</option>
+            <option value="m16">M16 $50000</option>
+        </select> <br>
+            <input type="submit" value="Comprar" />
+        </form>
+    </div>
+           
+           <div class="equipamentos">
+            <h2>Equipamentos</h2>
+            <form action="#">
+            <label for="lang">Equipamentos</label>
+            <select class="equipamentos" name="equipamentos" id="equipamentos">
+                <option value="none">None</option>
+              <option value="colete">Colete a prova de bala simples</option>
+              <option value="colete">Colete a prova de balas reforçado</option>
+              <option value="kit">Kit completo de colete com capacete</option>
+             </select> <br>
+            <input class="gangue" type="submit" value="Comprar" />
+      </form>
+           </div>
+
            <footer>
             <p>Desenvolvido por Lucas Elias</p>
         </footer>
 </body>
 <script src="js/main.js"></script>
-<script src="js/crimes.js"></script>
-<script src="js/inteligencia.js"></script>
-<script src="js/forca.js"></script>
+<script src="js/armas.js"></script>
 <script src="js/atualizaValores.js"></script>
 </html>

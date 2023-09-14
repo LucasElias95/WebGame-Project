@@ -36,6 +36,18 @@ function atualizarForca(novoValor) {
   forcaElement.textContent = novoValor;
 }
 
+// Função para obter o valor atual do poder de fogo do armazenamento local
+function getPoderFogo() {
+  const fogo = localStorage.getItem('poderFogo');
+  return fogo ? parseInt(fogo) : 0;
+}
+// Função para atualizar o valor de poder de fogo na página e no armazenamento local
+function atualizarFire(novoValor) {
+  localStorage.setItem('poderFogo', novoValor.toString());
+  const Fire = document.getElementById('poderFogo');
+  Fire.textContent = novoValor;
+}
+
   
 // Função para atualizar o valor do dinheiro na página
 function atualizarDinheiroNaPagina() {
@@ -49,6 +61,7 @@ window.addEventListener('load', function () {
   atualizarDinheiroNaPagina();
   atualizarInteligencia(getInteligencia()); // Passa o valor da inteligência do armazenamento local
   atualizarForca(getForca()); // Passa o valor da força do armazenamento local
+  atualizarFire(getPoderFogo()); // Passa o valor da força do armazenamento local
 });
 
   
