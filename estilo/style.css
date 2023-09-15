@@ -68,10 +68,20 @@ header > h1{
         padding-top:1px;
         box-shadow: 4px 4px 9px 0px rgb(0, 0, 0, 0.315);
         }
-
+        h1.fimdejogo{
+            color: var(--cor0);
+            max-width: 700px;
+            font-family: var(--fonte-destaque);
+            text-align: center ;
+        }
         h2{
             max-width: 700px;
-           
+            font-family: var(--fonte-destaque);
+            text-align: center ;
+        }
+        h2.fimdejogo{
+            color: var(--cor0);
+            max-width: 700px;
             font-family: var(--fonte-destaque);
             text-align: center ;
         }
@@ -116,14 +126,11 @@ header > h1{
         p.discricao{
                         color: white; opacity: 0;
                     }
-        p.vida{
+        p.display{
             text-align: left;
             font-family: var(--fonte-destaque);
         }
-        p.dinheiro{
-            text-align: left;
-            font-family: var(--fonte-destaque);
-        }
+       
          
         nav {
         padding-left:0px;
@@ -175,6 +182,52 @@ div.estatisticas {
         padding-left: 10%;
     }
 
+        /* -------------------------------------------
+Página Hospital*/
+
+div.hospitalPublico{
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    background-color: var(--cor1);
+    opacity: 0.8;
+    position: absolute;
+    left: 200px;
+    top: 150px;
+   }
+div.hospitalPublico:hover{
+    background-color: var(--cor4);
+}           
+div.hospitalParticular{
+text-align: center;
+width: 30%;
+height: 30%;
+background-color: var(--cor1);
+opacity: 0.8;
+position: absolute;
+left: 200px;
+top: 350px;        
+}
+div.hospitalParticular:hover{
+background-color: var(--cor4);
+}
+
+
+h3{
+font-family: var(--fonte-destaque);
+text-align: center;
+}
+p.hospital{
+color: var(--cor0);
+}
+
+input.hospital{
+width: 30%;
+left: 40%;
+position: absolute;
+height: 16%;
+
+}
     /* -------------------------------------------
 Página Cometer crimes */
 
@@ -338,6 +391,17 @@ div.treinoArtesMarciais{
 div.treinoArtesMarciais:hover{
 background-color: var(--cor4);
 }
+
+p.academia{
+    color: var(--cor0);
+}
+
+input.academia{
+    width: 30%;
+    left: 40%;
+    position: absolute;
+    height: 16%;
+}  
 
     /* -------------------------------------------
 Página Mercado de Armas */

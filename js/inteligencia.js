@@ -17,6 +17,12 @@ const custoInteligencia = {
     'aulaParticular': -1000,
 }
 
+const tempoEstudo = {
+    'aulaSozinho': 1,
+    'aulaEscola': 2,
+    'aulaParticular': 3,
+}
+
 // Função para obter o valor atual da inteligencia do armazenamento local
 function getInteligencia() {
     const int = localStorage.getItem('inteligencia');
@@ -52,6 +58,12 @@ botaoAulaSozinho.addEventListener('click', function () {
     const dinheiroAtual = getDinheiro();
     const novoDinheiro = dinheiroAtual + valorDeEstudo; 
     atualizarDinheiro(novoDinheiro);
+
+    //atualizar idade
+    const tempoDeEstudo = tempoEstudo['aulaSozinho'];
+    const idadeAtual = getIdade();
+    const novaIdade = idadeAtual + tempoDeEstudo;
+    atualizarIdade(novaIdade)
 });
 
 
@@ -67,6 +79,13 @@ botaoAulaEscola.addEventListener('click', function () {
     const dinheiroAtual = getDinheiro();
     const novoDinheiro = dinheiroAtual + valorDeEstudo; 
     atualizarDinheiro(novoDinheiro);
+
+    //atualizar idade
+     const tempoDeEstudo = tempoEstudo['aulaEscola'];
+     const idadeAtual = getIdade();
+     const novaIdade = idadeAtual + tempoDeEstudo;
+     atualizarIdade(novaIdade)
+
     } else {
         // Caso contrário, exiba um alerta
         alert("Você não possui dinheiro!");
@@ -85,6 +104,13 @@ botaoAulaParticular.addEventListener('click', function () {
     const dinheiroAtual = getDinheiro();
     const novoDinheiro = dinheiroAtual + valorDeEstudo; // Alterado para adição
     atualizarDinheiro(novoDinheiro);
+
+     //atualizar idade
+     const tempoDeEstudo = tempoEstudo['aulaParticular'];
+     const idadeAtual = getIdade();
+     const novaIdade = idadeAtual + tempoDeEstudo;
+     atualizarIdade(novaIdade)
+
     } else {
         // Caso contrário, exiba um alerta
         alert("Você não possui dinheiro!");

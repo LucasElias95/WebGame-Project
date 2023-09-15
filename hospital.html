@@ -20,7 +20,7 @@
         <div class="target-container" id="targetDiv">
            
             <a href="estatisticas.html"><img id="selectedImage" src="" alt="Imagem Selecionada"></a>
-        </p><p class ="vida">Vida: </p> <p class="dinheiro">Dinheiro $<span id="dinheiroDisplay">0</span></p>
+            <p class="display">Vida: <span id="vidaDisplay">0</span></p> <p class="display">Dinheiro $<span id="dinheiroDisplay">0</span></p> <p class="display">Idade: <span id="idadeDisplay">0</span></p>
             </div>     
         <dl>
             <dd><a href="hospital.html">🏥 Hospital</a></dd>
@@ -32,6 +32,33 @@
             <dd><a href="gangue.html">👥 Gangue</a></dd>
         </dl>
            </nav>
+           <section id="academia">
+
+            <div class="hospitalPublico">
+                    <h3>Ir ao hospital público</h3>
+               
+                <p class="hospital">Saúde: +5 Preço: Gratuito Tempo: 1 mês <span id="vida"></span></p>
+                <input class="hospital" id="publico" type="submit" value="IR" />
+                </div>
+    
+            <div class="hospitalParticular">
+                    <h3>Ir ao hospital particular</h3>
+                 
+                 <p class="hospital">Saúde: +15 Preço: $1000  Tempo: 2 mêses <span id="vida"></span></p>
+                 <input class="hospital" id="particular" type="submit" value="IR" />
+                </div>
+              
+               </section>
+               <footer>
+                <p>Desenvolvido por Lucas Elias</p>
+            </footer>
+    </body>
+    <script src="js/main.js"></script>
+    <script src="js/vida.js"></script>
+    <script src="js/atualizaValores.js"></script>
+    
+    </html>
+    
            <footer>
             <p>Desenvolvido por Lucas Elias</p>
         </footer>

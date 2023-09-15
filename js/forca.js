@@ -17,6 +17,12 @@ const custoTreino = {
     'artesMarciais': -1000,
 }
 
+const tempoTreino = {
+    'sozinho': 1,
+    'treinoAcademia': 2,
+    'artesMarciais': 3,
+}
+
 // Função para obter o valor atual da força do armazenamento local
 function getForca() {
     const str = localStorage.getItem('força');
@@ -41,6 +47,12 @@ botaoSozinho.addEventListener('click', function () {
     const dinheiroAtual = getDinheiro();
     const novoDinheiro = dinheiroAtual + CustoDeTreino; 
     atualizarDinheiro(novoDinheiro);
+
+    //atualizar idade
+    const tempoDeTreino = tempoTreino['sozinho'];
+    const idadeAtual = getIdade();
+    const novaIdade = idadeAtual + tempoDeTreino;
+    atualizarIdade(novaIdade)
 });
 
 
@@ -56,6 +68,12 @@ botaoAcademia.addEventListener('click', function () {
     const dinheiroAtual = getDinheiro();
     const novoDinheiro = dinheiroAtual + CustoDeTreino; 
     atualizarDinheiro(novoDinheiro);
+
+     //atualizar idade
+     const tempoDeTreino = tempoTreino['treinoAcademia'];
+     const idadeAtual = getIdade();
+     const novaIdade = idadeAtual + tempoDeTreino;
+     atualizarIdade(novaIdade)
 
     } else {
         // Caso contrário, exiba um alerta
@@ -75,6 +93,12 @@ botaoArtesMarciais.addEventListener('click', function () {
     const dinheiroAtual = getDinheiro();
     const novoDinheiro = dinheiroAtual + CustoDeTreino; 
     atualizarDinheiro(novoDinheiro);
+
+     //atualizar idade
+     const tempoDeTreino = tempoTreino['artesMarciais'];
+     const idadeAtual = getIdade();
+     const novaIdade = idadeAtual + tempoDeTreino;
+     atualizarIdade(novaIdade)
 
     } else {
         // Caso contrário, exiba um alerta

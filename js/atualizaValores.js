@@ -1,3 +1,4 @@
+//-----------------------DINHEIRO------------------------------------
 // Função para obter o valor atual do dinheiro do armazenamento local
 function getDinheiro() {
     const dinheiro = localStorage.getItem('dinheiro');
@@ -7,11 +8,19 @@ function getDinheiro() {
 
   function atualizarDinheiro(novoValor) {
     localStorage.setItem('dinheiro', novoValor.toString());
-    const dinheiroElement = document.getElementById('dinheiroDisplay'); // Alterado para 'dinheiroDisplay'
+    const dinheiroElement = document.getElementById('dinheiroDisplay'); 
     dinheiroElement.textContent = novoValor;
 }
-  
 
+// Função para atualizar o valor do dinheiro na página
+function atualizarDinheiroNaPagina() {
+  const dinheiroAtual = getDinheiro();
+  const dinheiroElement = document.getElementById('dinheiroDisplay');
+  dinheiroElement.textContent = dinheiroAtual;
+}
+
+  
+//-----------------------INTELIGENCIA------------------------------------
 // Função para obter o valor atual do inteligencia do armazenamento local
 function getInteligencia() {
   const inteligencia = localStorage.getItem('inteligencia');
@@ -24,6 +33,8 @@ function atualizarInteligencia(novoValor) {
   const inteligenciaElement = document.getElementById('inteligencia');
   inteligenciaElement.textContent = novoValor;
 }
+
+//-----------------------FORÇA------------------------------------
 // Função para obter o valor atual do forca do armazenamento local
 function getForca() {
   const str = localStorage.getItem('força');
@@ -36,6 +47,8 @@ function atualizarForca(novoValor) {
   forcaElement.textContent = novoValor;
 }
 
+//-----------------------PODER DE FOGO------------------------------------
+
 // Função para obter o valor atual do poder de fogo do armazenamento local
 function getPoderFogo() {
   const fogo = localStorage.getItem('poderFogo');
@@ -47,18 +60,61 @@ function atualizarFire(novoValor) {
   const Fire = document.getElementById('poderFogo');
   Fire.textContent = novoValor;
 }
+//-----------------------IDADE-------------------------------------------
+// Função para obter o valor atual da idade do armazenamento local
+function getIdade() {
+  const idade = localStorage.getItem('idade');
+  return idade ? parseInt(idade) : 0;
+}
 
-  
+// Função para atualizar o valor de idade na página e no armazenamento local
+function atualizarIdade(novaIdade) {
+  localStorage.setItem('idade', novaIdade.toString());
+  const idadeElement = document.getElementById('idadeDisplay');
+  idadeElement.textContent = novaIdade;
+}
+
 // Função para atualizar o valor do dinheiro na página
-function atualizarDinheiroNaPagina() {
-  const dinheiroAtual = getDinheiro();
-  const dinheiroElement = document.getElementById('dinheiroDisplay');
-  dinheiroElement.textContent = dinheiroAtual;
+function atualizarIdadeNaPagina() {
+  const idadeAtual = getIdade();
+  const idadeElement = document.getElementById('idadeDisplay');
+  idadeElement.textContent = idadeAtual;
+}
+ 
+//-----------------------VIDA------------------------------------
+function getVida() {
+  const vida = localStorage.getItem('vida');
+  return vida ? parseInt(vida) : 100;
+}
+
+function atualizarVida(novaVida) {
+  if (novaVida > 100) {
+    novaVida = 100;
+  }
+
+  if (novaVida < 0) {
+    window.location.href = "fimdejogo.html";
+    return;
+  }
+
+  localStorage.setItem('vida', novaVida.toString());
+  const vidaElement = document.getElementById('vidaDisplay');
+  vidaElement.textContent = novaVida;
+}
+
+// Função para atualizar o valor de vida na página
+function atualizarVidaNaPagina() {
+  const vidaAtual = getVida();
+  const vidaElement = document.getElementById('vidaDisplay');
+  vidaElement.textContent = vidaAtual;
 }
 
 
+//-----------------------ATUALIZAR------------------------------------
 window.addEventListener('load', function () {
+  atualizarVidaNaPagina();
   atualizarDinheiroNaPagina();
+  atualizarIdadeNaPagina();
   atualizarInteligencia(getInteligencia()); // Passa o valor da inteligência do armazenamento local
   atualizarForca(getForca()); // Passa o valor da força do armazenamento local
   atualizarFire(getPoderFogo()); // Passa o valor da força do armazenamento local
