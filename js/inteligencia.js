@@ -34,18 +34,6 @@ function atualizarInteligencia(novoValor) {
     inteligencia.textContent = novoValor;
 }
 
-// Função para obter o valor atual de dinheiro do armazenamento local
-function getDinheiro() {
-    const dinheiro = localStorage.getItem('dinheiro');
-    return dinheiro ? parseInt(dinheiro) : 0;
-}
-
-function atualizarDinheiro(novoValor) {
-    localStorage.setItem('dinheiro', novoValor.toString());
-    const dinheiroElement = document.getElementById('dinheiro');
-    dinheiroElement.textContent = novoValor;
-}
-
 //BOTÕES INTELIGENCIA
 botaoAulaSozinho.addEventListener('click', function () {
     const atributoDeInteligencia = atributoInteligencia['aulaSozinho'];
@@ -62,8 +50,18 @@ botaoAulaSozinho.addEventListener('click', function () {
     //atualizar idade
     const tempoDeEstudo = tempoEstudo['aulaSozinho'];
     const idadeAtual = getIdade();
-    const novaIdade = idadeAtual + tempoDeEstudo;
-    atualizarIdade(novaIdade)
+    const mesesAtuais = idadeAtual % 12; // Calcula os meses atuais
+    const anosAtuais = getAnos();
+    
+    if (mesesAtuais + tempoDeEstudo >= 12) {
+      const novosAnos = anosAtuais + 1;
+      const novaIdade = mesesAtuais + tempoDeEstudo - 12;
+      atualizarAnos(novosAnos);
+      atualizarIdade(novaIdade);
+    } else {
+      const novaIdade = idadeAtual + tempoDeEstudo;
+      atualizarIdade(novaIdade);
+    }
 });
 
 
@@ -83,8 +81,18 @@ botaoAulaEscola.addEventListener('click', function () {
     //atualizar idade
      const tempoDeEstudo = tempoEstudo['aulaEscola'];
      const idadeAtual = getIdade();
-     const novaIdade = idadeAtual + tempoDeEstudo;
-     atualizarIdade(novaIdade)
+     const mesesAtuais = idadeAtual % 12; // Calcula os meses atuais
+     const anosAtuais = getAnos();
+     
+     if (mesesAtuais + tempoDeEstudo >= 12) {
+       const novosAnos = anosAtuais + 1;
+       const novaIdade = mesesAtuais + tempoDeEstudo - 12;
+       atualizarAnos(novosAnos);
+       atualizarIdade(novaIdade);
+     } else {
+       const novaIdade = idadeAtual + tempoDeEstudo;
+       atualizarIdade(novaIdade);
+     }
 
     } else {
         // Caso contrário, exiba um alerta
@@ -108,8 +116,18 @@ botaoAulaParticular.addEventListener('click', function () {
      //atualizar idade
      const tempoDeEstudo = tempoEstudo['aulaParticular'];
      const idadeAtual = getIdade();
-     const novaIdade = idadeAtual + tempoDeEstudo;
-     atualizarIdade(novaIdade)
+     const mesesAtuais = idadeAtual % 12; // Calcula os meses atuais
+     const anosAtuais = getAnos();
+     
+     if (mesesAtuais + tempoDeEstudo >= 12) {
+       const novosAnos = anosAtuais + 1;
+       const novaIdade = mesesAtuais + tempoDeEstudo - 12;
+       atualizarAnos(novosAnos);
+       atualizarIdade(novaIdade);
+     } else {
+       const novaIdade = idadeAtual + tempoDeEstudo;
+       atualizarIdade(novaIdade);
+     }
 
     } else {
         // Caso contrário, exiba um alerta

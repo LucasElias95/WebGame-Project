@@ -55,32 +55,6 @@ function atualizarDinheiro(novoValor) {
   dinheiroElement.textContent = novoValor;
 }
 
-function getIdade() {
-  const idade = localStorage.getItem('idade');
-  return idade ? parseInt(idade) : 0;
-}
-
-function atualizarIdade(novoValorIdade) {
-  localStorage.setItem('idade', novoValorIdade.toString());
-  idadeElement.textContent = novoValorIdade;
-}
-
-function getAnos() {
-  const anos = localStorage.getItem('anos');
-  return anos ? parseInt(anos) : 0;
-}
-
-function atualizarAnos(novoAno) {
-  localStorage.setItem('anos', novoAno.toString());
-  const anosElement = document.getElementById('anosDisplay');
-  anosElement.textContent = novoAno;
-}
-
-function atualizarIdade(novaIdade) {
-  localStorage.setItem('idade', novaIdade.toString());
-  const idadeElement = document.getElementById('idadeDisplay');
-  idadeElement.textContent = novaIdade;
-}
 
 // Adicione eventos de clique para os botões "Cometer crime"
 document.querySelector('.crimes form').addEventListener('submit', function (e) {

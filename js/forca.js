@@ -4,6 +4,8 @@ const botaoAcademia = document.getElementById('treinoAcademia');
 const botaoArtesMarciais = document.getElementById('artesMarciais');
 const forcaElement = document.getElementById('força');
 
+
+
 //VALORES FORÇA
 const atributoForca = {
     'sozinho': 1,
@@ -53,16 +55,16 @@ botaoSozinho.addEventListener('click', function () {
     const idadeAtual = getIdade();
     const mesesAtuais = idadeAtual % 12; // Calcula os meses atuais
     const anosAtuais = getAnos();
-
-if (mesesAtuais + tempoDeTreino >= 12) {
-  const novosAnos = anosAtuais + 1;
-  const novaIdade = mesesAtuais + tempoDeTreino - 12;
-  atualizarAnos(novosAnos);
-  atualizarIdade(novaIdade);
-} else {
-  const novaIdade = idadeAtual + tempoDeTreino;
-  atualizarIdade(novaIdade);
-}
+    
+    if (mesesAtuais + tempoDeTreino >= 12) {
+      const novosAnos = anosAtuais + 1;
+      const novaIdade = mesesAtuais + tempoDeTreino - 12;
+      atualizarAnos(novosAnos);
+      atualizarIdade(novaIdade);
+    } else {
+      const novaIdade = idadeAtual + tempoDeTreino;
+      atualizarIdade(novaIdade);
+    }
 });
 
 
@@ -82,8 +84,18 @@ botaoAcademia.addEventListener('click', function () {
      //atualizar idade
      const tempoDeTreino = tempoTreino['treinoAcademia'];
      const idadeAtual = getIdade();
-     const novaIdade = idadeAtual + tempoDeTreino;
-     atualizarIdade(novaIdade)
+     const mesesAtuais = idadeAtual % 12; // Calcula os meses atuais
+     const anosAtuais = getAnos();
+     
+     if (mesesAtuais + tempoDeTreino >= 12) {
+       const novosAnos = anosAtuais + 1;
+       const novaIdade = mesesAtuais + tempoDeTreino - 12;
+       atualizarAnos(novosAnos);
+       atualizarIdade(novaIdade);
+     } else {
+       const novaIdade = idadeAtual + tempoDeTreino;
+       atualizarIdade(novaIdade);
+     }
 
     } else {
         // Caso contrário, exiba um alerta
@@ -107,8 +119,18 @@ botaoArtesMarciais.addEventListener('click', function () {
      //atualizar idade
      const tempoDeTreino = tempoTreino['artesMarciais'];
      const idadeAtual = getIdade();
-     const novaIdade = idadeAtual + tempoDeTreino;
-     atualizarIdade(novaIdade)
+     const mesesAtuais = idadeAtual % 12; // Calcula os meses atuais
+     const anosAtuais = getAnos();
+     
+     if (mesesAtuais + tempoDeTreino >= 12) {
+       const novosAnos = anosAtuais + 1;
+       const novaIdade = mesesAtuais + tempoDeTreino - 12;
+       atualizarAnos(novosAnos);
+       atualizarIdade(novaIdade);
+     } else {
+       const novaIdade = idadeAtual + tempoDeTreino;
+       atualizarIdade(novaIdade);
+     }
 
     } else {
         // Caso contrário, exiba um alerta
@@ -116,7 +138,7 @@ botaoArtesMarciais.addEventListener('click', function () {
     }
 });
 
-// Verifique a inteligência atual e defina-a se for a primeira vez
+// Verifique a força atual e defina-a se for a primeira vez
 const ForcaAtual = getForca();
 if (ForcaAtual === 0) {
     localStorage.setItem('força', '0');

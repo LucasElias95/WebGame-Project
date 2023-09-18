@@ -44,8 +44,19 @@ botaoPublico.addEventListener('click', function () {
     //atualizar idade
     const tempoDeCura = tempoVida['publico'];
     const idadeAtual = getIdade();
-    const novaIdade = idadeAtual + tempoDeCura;
-    atualizarIdade(novaIdade)
+    const mesesAtuais = idadeAtual % 12; // Calcula os meses atuais
+    const anosAtuais = getAnos();
+    
+    if (mesesAtuais + tempoDeCura >= 12) {
+      const novosAnos = anosAtuais + 1;
+      const novaIdade = mesesAtuais + tempoDeCura - 12;
+      atualizarAnos(novosAnos);
+      atualizarIdade(novaIdade);
+
+    } else {
+      const novaIdade = idadeAtual + tempoDeCura;
+      atualizarIdade(novaIdade);
+    }
     
     }else {
         // Caso contrário, exiba um alerta
@@ -76,11 +87,21 @@ botaoParticular.addEventListener('click', function () {
 
         // Atualizar idade
         const tempoDeCura = tempoVida['particular'];
-        const idadeAtual = getIdade();
-        const novaIdade = idadeAtual + tempoDeCura;
-        atualizarIdade(novaIdade)
+          const idadeAtual = getIdade();
+    const mesesAtuais = idadeAtual % 12; // Calcula os meses atuais
+    const anosAtuais = getAnos();
+    
+    if (mesesAtuais + tempoDeCura >= 12) {
+      const novosAnos = anosAtuais + 1;
+      const novaIdade = mesesAtuais + tempoDeCura - 12;
+      atualizarAnos(novosAnos);
+      atualizarIdade(novaIdade);
+      
+    } else {
+      const novaIdade = idadeAtual + tempoDeCura;
+      atualizarIdade(novaIdade);
     }
-});
+}});
 
 
 
