@@ -130,6 +130,11 @@ header > h1{
             text-align: left;
             font-family: var(--fonte-destaque);
         }
+        p.displayTempo{
+            display: inline;
+            text-align: left;
+            font-family: var(--fonte-destaque);
+        }
        
          
         nav {

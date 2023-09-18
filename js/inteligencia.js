@@ -126,4 +126,3 @@ if (InteligenciaAtual === 0) {
 // Atualize a inteligência na página de estatísticas
 atualizarInteligencia(InteligenciaAtual);
 
-

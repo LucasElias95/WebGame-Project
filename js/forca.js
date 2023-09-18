@@ -51,8 +51,18 @@ botaoSozinho.addEventListener('click', function () {
     //atualizar idade
     const tempoDeTreino = tempoTreino['sozinho'];
     const idadeAtual = getIdade();
-    const novaIdade = idadeAtual + tempoDeTreino;
-    atualizarIdade(novaIdade)
+    const mesesAtuais = idadeAtual % 12; // Calcula os meses atuais
+    const anosAtuais = getAnos();
+
+if (mesesAtuais + tempoDeTreino >= 12) {
+  const novosAnos = anosAtuais + 1;
+  const novaIdade = mesesAtuais + tempoDeTreino - 12;
+  atualizarAnos(novosAnos);
+  atualizarIdade(novaIdade);
+} else {
+  const novaIdade = idadeAtual + tempoDeTreino;
+  atualizarIdade(novaIdade);
+}
 });
 
 

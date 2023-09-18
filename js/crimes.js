@@ -1,5 +1,6 @@
 const dinheiroElement = document.getElementById('dinheiro');
 const idadeElement = document.getElementById('idade');
+const anosElement = document.getElementById('anos')
 
 const valoresDosCrimes = {
   'none': 0,
@@ -30,7 +31,7 @@ const tempoCrime ={
 
 const dano = {
   'none': 0,
-  'rua': Math.floor(Math.random() * 5),
+  'rua': Math.floor(Math.random() * 4) + 1,
   'conveniencia': Math.floor(Math.random() * 5) + 5,
   'casa': Math.floor(Math.random() * 10) + 5,
   'carro': Math.floor(Math.random() * 15) + 5, 
@@ -64,6 +65,23 @@ function atualizarIdade(novoValorIdade) {
   idadeElement.textContent = novoValorIdade;
 }
 
+function getAnos() {
+  const anos = localStorage.getItem('anos');
+  return anos ? parseInt(anos) : 0;
+}
+
+function atualizarAnos(novoAno) {
+  localStorage.setItem('anos', novoAno.toString());
+  const anosElement = document.getElementById('anosDisplay');
+  anosElement.textContent = novoAno;
+}
+
+function atualizarIdade(novaIdade) {
+  localStorage.setItem('idade', novaIdade.toString());
+  const idadeElement = document.getElementById('idadeDisplay');
+  idadeElement.textContent = novaIdade;
+}
+
 // Adicione eventos de clique para os botões "Cometer crime"
 document.querySelector('.crimes form').addEventListener('submit', function (e) {
   e.preventDefault();
@@ -73,17 +91,27 @@ document.querySelector('.crimes form').addEventListener('submit', function (e) {
   const novoDinheiro = dinheiroAtual + valorDoCrime;
   atualizarDinheiro(novoDinheiro);
 
-  //atualizar idade
-  const tempoDoCrime = tempoCrime[crimeSelecionado];
-  const idadeAtual = getIdade();
+ //danos
+ const danoCausado = dano[crimeSelecionado];
+ const vidaAtual = getVida();
+ const novaVida = vidaAtual - danoCausado;
+ atualizarVida(novaVida);
+ 
+//atualizar idade
+const tempoDoCrime = tempoCrime[crimeSelecionado];
+const idadeAtual = getIdade();
+const mesesAtuais = idadeAtual % 12; // Calcula os meses atuais
+const anosAtuais = getAnos();
+
+if (mesesAtuais + tempoDoCrime >= 12) {
+  const novosAnos = anosAtuais + 1;
+  const novaIdade = mesesAtuais + tempoDoCrime - 12;
+  atualizarAnos(novosAnos);
+  atualizarIdade(novaIdade);
+} else {
   const novaIdade = idadeAtual + tempoDoCrime;
   atualizarIdade(novaIdade);
-
-  //danos
-  const danoCausado = dano[crimeSelecionado];
-  const vidaAtual = getVida();
-  const novaVida = vidaAtual - danoCausado;
-  atualizarVida(novaVida);
+}
 
 });
 
@@ -94,18 +122,29 @@ document.querySelector('.crimesGangue form').addEventListener('submit', function
   const dinheiroAtual = getDinheiro();
   const novoDinheiro = dinheiroAtual + valorDoCrime;
   atualizarDinheiro(novoDinheiro);
-
-  //atualizar idade
-  const tempoDoCrime = tempoCrime[crimeSelecionado];
-  const idadeAtual = getIdade();
-  const novaIdade = idadeAtual + tempoDoCrime;
-  atualizarIdade(novaIdade);
-
   //danos
   const danoCausado = dano[crimeSelecionado];
   const vidaAtual = getVida();
   const novaVida = vidaAtual - danoCausado;
   atualizarVida(novaVida);
+
+ //atualizar idade
+ // Atualizar idade
+ const tempoDoCrime = tempoCrime[crimeSelecionado];
+ const idadeAtual = getIdade();
+ const mesesAtuais = idadeAtual % 12; // Calcula os meses atuais
+ const anosAtuais = getAnos();
+ 
+ if (mesesAtuais + tempoDoCrime >= 12) {
+   const novosAnos = anosAtuais + 1;
+   const novaIdade = mesesAtuais + tempoDoCrime - 12;
+   atualizarAnos(novosAnos);
+   atualizarIdade(novaIdade);
+ } else {
+   const novaIdade = idadeAtual + tempoDoCrime;
+   atualizarIdade(novaIdade);
+ }
+
 });
 
 // Verifique se o dinheiro já está armazenado no armazenamento local
