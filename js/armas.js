@@ -1,4 +1,6 @@
 const Fire = document.getElementById('poderFogo');
+const resistencia = document.getElementById('resistencia')
+
 const custoArmas = {
 'soco': 50,
 'taco': 80,
@@ -32,6 +34,19 @@ const custoArmas = {
       };
 
 
+      const custoEquip = {
+        'simples': 500,
+        'reforcado': 800,
+        'completo': 1000,
+      }
+    const forcaEquip ={
+        'simples': 30,
+        'reforcado': 50,
+        'completo': 80,
+    }
+
+
+
       // Função para obter o valor atual da Poder de Fogo do armazenamento local
 function getPoderFogo() {
     const fogo = localStorage.getItem('poderFogo');
@@ -44,38 +59,79 @@ function atualizarFire(novoValor) {
     Fire.textContent = novoValor;
 }
 
-// Adicione eventos de clique para os botões "Comprar"
+// Função para obter o valor atual de Resistencia do armazenamento local
+function getReistencia() {
+    const resist = localStorage.getItem('resistencia');
+    return resist ? parseInt(resist) : 0;
+}
+
+// Função para atualizar o valor de resistencia na página e no armazenamento local
+function atualizarResistencia(novoValor) {
+    localStorage.setItem('resistencia', novoValor.toString());
+    equip.textContent = novoValor;
+}
+
+// Função para verificar se uma arma já foi comprada
+function armaJaComprada(arma) {
+    const armasCompradas = JSON.parse(localStorage.getItem('armasCompradas')) || [];
+    return armasCompradas.includes(arma);
+}
+
+// Função para marcar uma arma como comprada
+function marcarArmaComoComprada(arma) {
+    const armasCompradas = JSON.parse(localStorage.getItem('armasCompradas')) || [];
+    armasCompradas.push(arma);
+    localStorage.setItem('armasCompradas', JSON.stringify(armasCompradas));
+}
+
+
+// Adicione um evento de clique para o botão "Comprar" de armas
 document.getElementById('comprarArmaForm').addEventListener('submit', function (e) {
     e.preventDefault();
-    
+
     const armaSelecionada = document.getElementById('armasSelect').value;
     const custoDaArma = custoArmas[armaSelecionada];
     const dinheiroAtual = getDinheiro();
 
     if (dinheiroAtual >= custoDaArma) {
-        if (!itemJaComprado(armaSelecionada)) {
-            // O jogador tem dinheiro suficiente e o item ainda não foi comprado
+        if (!armaJaComprada(armaSelecionada)) {
+            // O jogador tem dinheiro suficiente e a arma ainda não foi comprada
             const novoDinheiro = dinheiroAtual - custoDaArma;
             atualizarDinheiro(novoDinheiro);
 
-            const FireAtual = getPoderFogo();
             const poderDaArma = forcaArmas[armaSelecionada];
-            const novoPoderFogo = FireAtual + poderDaArma;
-            atualizarFire(novoPoderFogo);
+            atualizarFire(poderDaArma);
 
-            marcarItemComoComprado(armaSelecionada); // Marca a arma como comprada
+            marcarArmaComoComprada(armaSelecionada);
 
             alert(`Você comprou uma ${armaSelecionada}!`);
         } else {
-            // O item já foi comprado
+            // A arma já foi comprada
             alert(`Você já possui uma ${armaSelecionada}.`);
         }
     } else {
         // O jogador não possui dinheiro suficiente
         alert("Você não possui dinheiro suficiente para comprar essa arma!");
     }
-});
+})
 
+document.getElementById('comprarEquipamentosForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+const equipamentoSelecionado = document.getElementById('equipamentoSelect').value;
+const custoDoEquipamento = custoEquip[equipamentoSelecionado];
+const dinheiroAtual = getDinheiro();
 
+if (dinheiroAtual >= custoDoEquipamento) {
+        
+        const novoDinheiro = dinheiroAtual - custoDoEquipamento;
+        atualizarDinheiro(novoDinheiro);
 
- 
+        const poderEquipamento = forcaEquip[equipamentoSelecionado];
+        atualizarResistencia(poderEquipamento);
+
+        alert(`Você comprou uma ${equipamentoSelecionado}!`);
+    } 
+ else {
+    // O jogador não possui dinheiro suficiente
+    alert("Você não possui dinheiro suficiente para comprar esse equipamento!");
+}})

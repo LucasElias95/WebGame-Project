@@ -5,8 +5,8 @@ const anosElement = document.getElementById('anos')
 const valoresDosCrimes = {
   'none': 0,
   'rua': Math.floor(Math.random() * 50) + 10,
-  'conveniencia': Math.floor(Math.random() * 100) + 60,
-  'casa': Math.floor(Math.random() * 300) + 110,
+  'casa': Math.floor(Math.random() * 100) + 60,
+  'conveniencia': Math.floor(Math.random() * 300) + 110,
   'carro': Math.floor(Math.random() * 600) + 320,
   'superMercado': Math.floor(Math.random()* 1000) + 700,
   'caixa': Math.floor(Math.random() * 1100) + 750,
@@ -32,8 +32,8 @@ const tempoCrime ={
 const dano = {
   'none': 0,
   'rua': Math.floor(Math.random() * 4) + 1,
-  'conveniencia': Math.floor(Math.random() * 5) + 5,
-  'casa': Math.floor(Math.random() * 10) + 5,
+  'casa': Math.floor(Math.random() * 5) + 5,
+  'conveniencia': Math.floor(Math.random() * 10) + 5,
   'carro': Math.floor(Math.random() * 15) + 5, 
   'superMercado': Math.floor(Math.random()* 20) + 5,
   'caixa': Math.floor(Math.random() * 25) + 5, 
@@ -42,6 +42,32 @@ const dano = {
   'joalheria': Math.floor(Math.random() * 40) + 5, 
   'banco': Math.floor(Math.random() * 45) + 5, 
 }
+
+function atendeRequisitosArma(crimeSelecionado) {
+  // Defina os requisitos mínimos para cada tipo de crime
+  const requisitosArmas = {
+    'none': { poderDeFogo: 0 },
+    'rua': { poderDeFogo: 1 },
+    'casa': { poderDeFogo: 3 },
+    'conveniencia':{ poderDeFogo: 5},
+    'carro':{ poderDeFogo: 10},
+    'superMercado':{ poderDeFogo: 20},
+    'caixa': { poderDeFogo: 30},
+    'consecionaria': { poderDeFogo: 70},
+    'carroForte': { poderDeFogo: 140},
+    'joalheria':  { poderDeFogo: 600},
+    'banco':  { poderDeFogo: 1000},
+   
+  }};
+  function atendeRequisitosEquipamento(crimeSelecionado) {
+    // Defina os requisitos mínimos para cada tipo de crime
+    const atendeRequisitosEquipamento = {
+   
+      'carroForte': { resistencia: 30},
+      'joalheria':  { resistencia: 50},
+      'banco':  { resistencia: 80},
+     
+    }};
 
 // Função para obter o valor atual do dinheiro do armazenamento local
 function getDinheiro() {
@@ -102,7 +128,6 @@ document.querySelector('.crimesGangue form').addEventListener('submit', function
   const novaVida = vidaAtual - danoCausado;
   atualizarVida(novaVida);
 
- //atualizar idade
  // Atualizar idade
  const tempoDoCrime = tempoCrime[crimeSelecionado];
  const idadeAtual = getIdade();

@@ -60,6 +60,19 @@ localStorage.setItem('poderFogo', novoValor.toString());
 const Fire = document.getElementById('poderFogo');
 Fire.textContent = novoValor;
 }
+//-----------------------RESISTENCIA------------------------------------
+
+// Função para obter o valor atual do poder de fogo do armazenamento local
+function getResistencia() {
+    const resist = localStorage.getItem('resistencia');
+    return resist ? parseInt(resist) : 0;
+}
+  // Função para atualizar o valor de poder de fogo na página e no armazenamento local
+  function atualizarResistencia(novoValor) {
+  localStorage.setItem('resistencia', novoValor.toString());
+  const resistencia = document.getElementById('resistencia');
+  resistencia.textContent = novoValor;
+  }
 //-----------------------IDADE-------------------------------------------
 // Função para obter o valor atual da idade do armazenamento local
 function getIdade() {
@@ -140,6 +153,7 @@ atualizarAnosNaPagina();
 atualizarInteligencia(getInteligencia()); // Passa o valor da inteligência do armazenamento local
 atualizarForca(getForca()); // Passa o valor da força do armazenamento local
 atualizarFire(getPoderFogo()); // Passa o valor da força do armazenamento local
+atualizarResistencia(getResistencia());
 });
 
 

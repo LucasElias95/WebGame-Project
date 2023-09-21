@@ -1,13 +1,18 @@
-// Função para bloquear o botão de voltar após o usuário perder o jogo
-function bloquearBotaoVoltar() {
-    // Adicionar um evento de aviso quando o usuário tentar voltar
-    window.addEventListener('beforeunload', function (e) {
-        // Cancelar a ação padrão do navegador
-        e.preventDefault();
-        // Definir uma mensagem personalizada
-        e.returnValue = 'Você perdeu o jogo. Inicie um novo jogo para continuar.'; 
-    });
-}
+var links = document.querySelectorAll(".link");
 
-// Chame essa função quando o usuário perder o jogo
-bloquearBotaoVoltar();
+        // Função para bloquear a navegação entre páginas
+        function bloquearNavegacao(event) {
+            event.preventDefault();
+            alert("A navegação entre páginas está bloqueada.");
+        }
+
+        // Adiciona um ouvinte de evento de clique para bloquear a navegação
+        for (var i = 0; i < links.length; i++) {
+            links[i].addEventListener("click", bloquearNavegacao);
+        }
+
+        // Impede o usuário de voltar para páginas bloqueadas usando o botão "Voltar" do navegador
+        window.addEventListener("popstate", function(event) {
+            alert("A navegação entre páginas está bloqueada.");
+            history.pushState(null, null, window.location.href);
+        });
