@@ -47,6 +47,20 @@ const forcaElement = document.getElementById('força');
 forcaElement.textContent = novoValor;
 }
 
+  //-----------------------RESISTENCIA------------------------------------
+
+// Função para obter o valor atual do poder de fogo do armazenamento local
+function getResistencia() {
+  const resist = localStorage.getItem('resistencia');
+  return resist ? parseInt(resist) : 0;
+}
+// Função para atualizar o valor de poder de fogo na página e no armazenamento local
+function atualizarResistencia(novoValor) {
+localStorage.setItem('resistencia', novoValor.toString());
+const resistencia = document.getElementById('resistencia');
+resistencia.textContent = novoValor;
+}
+
 //-----------------------PODER DE FOGO------------------------------------
 
 // Função para obter o valor atual do poder de fogo do armazenamento local
@@ -60,19 +74,7 @@ localStorage.setItem('poderFogo', novoValor.toString());
 const Fire = document.getElementById('poderFogo');
 Fire.textContent = novoValor;
 }
-//-----------------------RESISTENCIA------------------------------------
 
-// Função para obter o valor atual do poder de fogo do armazenamento local
-function getResistencia() {
-    const resist = localStorage.getItem('resistencia');
-    return resist ? parseInt(resist) : 0;
-}
-  // Função para atualizar o valor de poder de fogo na página e no armazenamento local
-  function atualizarResistencia(novoValor) {
-  localStorage.setItem('resistencia', novoValor.toString());
-  const resistencia = document.getElementById('resistencia');
-  resistencia.textContent = novoValor;
-  }
 //-----------------------IDADE-------------------------------------------
 // Função para obter o valor atual da idade do armazenamento local
 function getIdade() {
@@ -115,6 +117,8 @@ function atualizarAnosNaPagina() {
   anosElement.textContent = anosAtual;
   }
 
+
+
 //-----------------------VIDA------------------------------------
 function getVida() {
 const vida = localStorage.getItem('vida');
@@ -144,16 +148,19 @@ vidaElement.textContent = vidaAtual;
 }
 
 
+
+
 //-----------------------ATUALIZAR------------------------------------
 window.addEventListener('load', function () {
-atualizarVidaNaPagina();
 atualizarDinheiroNaPagina();
 atualizarIdadeNaPagina();
 atualizarAnosNaPagina();
+atualizarVidaNaPagina();
+atualizarResistencia(getResistencia());
 atualizarInteligencia(getInteligencia()); // Passa o valor da inteligência do armazenamento local
 atualizarForca(getForca()); // Passa o valor da força do armazenamento local
 atualizarFire(getPoderFogo()); // Passa o valor da força do armazenamento local
-atualizarResistencia(getResistencia());
+
 });
 
 

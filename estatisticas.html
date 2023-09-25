@@ -43,19 +43,6 @@
 </body>
 
 <script src="js/main.js"></script>
-<script>
-    const selectedPersonagem = JSON.parse(localStorage.getItem('selectedPersonagem'));
-  
-    if (selectedPersonagem) {
-      // Atualize os valores das estatísticas com os valores do personagem selecionado
-      document.getElementById('força').textContent = selectedPersonagem.forca;
-      document.getElementById('inteligencia').textContent = selectedPersonagem.inteligencia;
-      document.getElementById('poderFogo').textContent = selectedPersonagem.poderFogo;
-  
-      // Atualize o valor de anos na página (substitua 'anosDisplay' pelo ID correto)
-      document.getElementById('anosDisplay').textContent = selectedPersonagem.anos;
-    }
-  </script>
-  <script src="js/crimes.js"></script>
+<script src="js/crimes.js"></script>
 <script src="js/atualizaValores.js"></script>
 </html>

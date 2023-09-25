@@ -32,15 +32,15 @@ const tempoCrime ={
 const dano = {
   'none': 0,
   'rua': Math.floor(Math.random() * 4) + 1,
-  'casa': Math.floor(Math.random() * 5) + 5,
+  'casa': Math.floor(Math.random() * 5) + 3,
   'conveniencia': Math.floor(Math.random() * 10) + 5,
-  'carro': Math.floor(Math.random() * 15) + 5, 
-  'superMercado': Math.floor(Math.random()* 20) + 5,
-  'caixa': Math.floor(Math.random() * 25) + 5, 
-  'consecionaria': Math.floor(Math.random() * 30) + 5,
-  'carroForte': Math.floor(Math.random() * 35) + 5, 
-  'joalheria': Math.floor(Math.random() * 40) + 5, 
-  'banco': Math.floor(Math.random() * 45) + 5, 
+  'carro': Math.floor(Math.random() * 15) + 7, 
+  'superMercado': Math.floor(Math.random()* 20) + 9,
+  'caixa': Math.floor(Math.random() * 25) + 10, 
+  'consecionaria': Math.floor(Math.random() * 30) + 10,
+  'carroForte': Math.floor(Math.random() * 35) + 10, 
+  'joalheria': Math.floor(Math.random() * 40) + 20, 
+  'banco': Math.floor(Math.random() * 45) + 20, 
 }
 
 function atendeRequisitosArma(crimeSelecionado) {
@@ -81,23 +81,38 @@ function atualizarDinheiro(novoValor) {
   dinheiroElement.textContent = novoValor;
 }
 
+function getReistencia() {
+  const resist = localStorage.getItem('resistencia');
+  return resist ? parseInt(resist) : 0;
+}
+
+function atualizarResistencia(novoValor) {
+  localStorage.setItem('resistencia', novoValor.toString());
+  equip.textContent = novoValor;
+}
+
+function getVida() {
+  const vida = localStorage.getItem('vida');
+  return vida ? parseInt(vida) : 100;
+  }
+
 
 // Adicione eventos de clique para os botões "Cometer crime"
 document.querySelector('.crimes form').addEventListener('submit', function (e) {
   e.preventDefault();
   const crimeSelecionado = document.querySelector('#solo').value;
+
+  /*if ((crimeSelecionado)> atendeRequisitosArma && atendeRequisitosEquipamento) {
+    alert('Você não possui os requisitos mínimos para cometer este crime.');
+    return;
+  */
+
   const valorDoCrime = valoresDosCrimes[crimeSelecionado];
   const dinheiroAtual = getDinheiro();
   const novoDinheiro = dinheiroAtual + valorDoCrime;
   atualizarDinheiro(novoDinheiro);
 
- //danos
- const danoCausado = dano[crimeSelecionado];
- const vidaAtual = getVida();
- const novaVida = vidaAtual - danoCausado;
- atualizarVida(novaVida);
- 
-//atualizar idade
+  //atualizar idade
 const tempoDoCrime = tempoCrime[crimeSelecionado];
 const idadeAtual = getIdade();
 const mesesAtuais = idadeAtual % 12; // Calcula os meses atuais
@@ -113,7 +128,28 @@ if (mesesAtuais + tempoDoCrime >= 12) {
   atualizarIdade(novaIdade);
 }
 
-});
+ //danos
+ const danoCausado = dano[crimeSelecionado];
+ const resistenciaAtual = getResistencia();
+ const vidaAtual = getVida();
+ 
+ let novaResistencia = resistenciaAtual; // Inicialize com o valor atual
+ let novaVida = vidaAtual; // Inicialize com o valor atual
+ 
+ if (danoCausado <= resistenciaAtual) {
+   // Se o dano for menor ou igual à resistência, a resistência absorve todo o dano.
+   novaResistencia = resistenciaAtual - danoCausado;
+ } else {
+   // Se o dano for maior que a resistência, a resistência é zerada e o excesso de dano é subtraído da vida.
+   novaResistencia = 0;
+   novaVida = vidaAtual - (danoCausado - resistenciaAtual);
+ }
+ 
+ atualizarVida(novaVida);
+ atualizarResistencia(novaResistencia);
+ 
+ });
+ 
 
 document.querySelector('.crimesGangue form').addEventListener('submit', function (e) {
   e.preventDefault();
@@ -122,13 +158,8 @@ document.querySelector('.crimesGangue form').addEventListener('submit', function
   const dinheiroAtual = getDinheiro();
   const novoDinheiro = dinheiroAtual + valorDoCrime;
   atualizarDinheiro(novoDinheiro);
-  //danos
-  const danoCausado = dano[crimeSelecionado];
-  const vidaAtual = getVida();
-  const novaVida = vidaAtual - danoCausado;
-  atualizarVida(novaVida);
 
- // Atualizar idade
+   // Atualizar idade
  const tempoDoCrime = tempoCrime[crimeSelecionado];
  const idadeAtual = getIdade();
  const mesesAtuais = idadeAtual % 12; // Calcula os meses atuais
@@ -143,6 +174,26 @@ document.querySelector('.crimesGangue form').addEventListener('submit', function
    const novaIdade = idadeAtual + tempoDoCrime;
    atualizarIdade(novaIdade);
  }
+
+// danos
+const danoCausado = dano[crimeSelecionado];
+const resistenciaAtual = getResistencia();
+const vidaAtual = getVida();
+
+let novaResistencia = resistenciaAtual; // Inicialize com o valor atual
+let novaVida = vidaAtual; // Inicialize com o valor atual
+
+if (danoCausado <= resistenciaAtual) {
+  // Se o dano for menor ou igual à resistência, a resistência absorve todo o dano.
+  novaResistencia = resistenciaAtual - danoCausado;
+} else {
+  // Se o dano for maior que a resistência, a resistência é zerada e o excesso de dano é subtraído da vida.
+  novaResistencia = 0;
+  novaVida = vidaAtual - (danoCausado - resistenciaAtual);
+}
+
+atualizarVida(novaVida);
+atualizarResistencia(novaResistencia);
 
 });
 
