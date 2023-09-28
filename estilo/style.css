@@ -262,6 +262,12 @@ Página Cometer crimes */
         opacity: 0;
     }
 
+    div.textoSolo{
+        font-family: var(--fonte-destaque);
+        margin-top: 45px;
+        text-align: center;
+    }
+
     div.crimesGangue{
         position: absolute;
         top: 62%;
@@ -282,6 +288,12 @@ Página Cometer crimes */
         left: 26%;
         position: absolute;
         margin-top: 3%;
+    }
+
+    div.textoGang{
+        font-family: var(--fonte-destaque);
+        margin-top: 45px;
+        text-align: center;
     }
 
     /* -------------------------------------------
