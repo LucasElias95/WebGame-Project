@@ -1,6 +1,7 @@
 //seleção de personagem
 const imageUrl = localStorage.getItem('selectedImage');
 const selectedImage = document.getElementById('selectedImage');
+const selectedPersonagem = JSON.parse(localStorage.getItem('selectedPersonagem'));
 const personagens = {
   nicolai: {
     "anos": 40,
@@ -29,47 +30,114 @@ const personagens = {
     "poderDeFogo": 5,
   },
 };
-const selectedPersonagem = JSON.parse(localStorage.getItem('selectedPersonagem'));
 
-function novoJogo(personagem, anos, forca, inteligencia, poderFogo) {
-  localStorage.clear();
-  localStorage.setItem('selectedPersonagem', JSON.stringify({
-    personagem: personagem,
-    anos: parseInt(anos),
-    forca: parseInt(forca),
-    inteligencia: parseInt(inteligencia),
-    poderFogo: parseInt(poderFogo),
-  }));
-     // Salvar a imagem do personagem
-     localStorage.setItem('selectedImage', document.getElementById(personagem).querySelector('img').src);
-    
+//-----------------------DINHEIRO------------------------------------
+// Função para obter o valor atual do dinheiro do armazenamento local
+function getDinheiro() {
+  const dinheiro = localStorage.getItem('dinheiro');
+  return dinheiro ? parseInt(dinheiro) : 0;
 }
 
-//------------------------------------------------
 
-function toggleDescription(element) {
-  const descricao = element.querySelector('.discricao');
-  descricao.classList.toggle('show-description');
+function atualizarDinheiro(novoValor) {
+  localStorage.setItem('dinheiro', novoValor.toString());
+  const dinheiroElement = document.getElementById('dinheiroDisplay'); 
+  dinheiroElement.textContent = novoValor;
 }
 
-function transferImage(imageUrl) {
-  localStorage.setItem('selectedImage', imageUrl);
+// Função para atualizar o valor do dinheiro na página
+function atualizarDinheiroNaPagina() {
+const dinheiroAtual = getDinheiro();
+const dinheiroElement = document.getElementById('dinheiroDisplay');
+dinheiroElement.textContent = dinheiroAtual;
 }
 
-if (imageUrl) {
-  selectedImage.src = imageUrl;
+
+//-----------------------INTELIGENCIA------------------------------------
+// Função para obter o valor atual do inteligencia do armazenamento local
+function getInteligencia() {
+const inteligencia = localStorage.getItem('inteligencia');
+return inteligencia ? parseInt(inteligencia) : 0;
 }
 
-function carregarJogo() {
-  // Verifique se há algum valor no Local Storage
-  if (localStorage.getItem("selectedImage") !== null) {
-    // Se houver um valor, redirecione para a página estatisticas.html
-    window.location.href = "estatisticas.html";
-  } else {
-    // Caso contrário, exiba um alerta
-    alert("Você não possui jogo salvo, para carregar um jogo é necessário começar um antes!");
+// Função para atualizar o valor da inteligência na página e no armazenamento local
+function atualizarInteligencia(novoValor) {
+localStorage.setItem('inteligencia', novoValor.toString());
+const inteligenciaElement = document.getElementById('inteligencia');
+inteligenciaElement.textContent = novoValor;
+}
+
+//-----------------------FORÇA------------------------------------
+// Função para obter o valor atual do forca do armazenamento local
+function getForca() {
+const str = localStorage.getItem('força');
+return str ? parseInt(str) : 0;
+}
+// Função para atualizar o valor da força na página e no armazenamento local
+function atualizarForca(novoValor) {
+localStorage.setItem('força', novoValor.toString());
+const forcaElement = document.getElementById('força');
+forcaElement.textContent = novoValor;
+}
+
+  //-----------------------RESISTENCIA------------------------------------
+
+// Função para obter o valor atual do poder de fogo do armazenamento local
+function getResistencia() {
+  const resist = localStorage.getItem('resistencia');
+  return resist ? parseInt(resist) : 0;
+}
+// Função para atualizar o valor de poder de fogo na página e no armazenamento local
+function atualizarResistencia(novoValor) {
+localStorage.setItem('resistencia', novoValor.toString());
+const resistencia = document.getElementById('resistencia');
+resistencia.textContent = novoValor;
+}
+
+//-----------------------PODER DE FOGO------------------------------------
+
+// Função para obter o valor atual do poder de fogo do armazenamento local
+function getPoderFogo() {
+const fogo = localStorage.getItem('poderFogo');
+return fogo ? parseInt(fogo) : 0;
+}
+// Função para atualizar o valor de poder de fogo na página e no armazenamento local
+function atualizarFire(novoValor) {
+localStorage.setItem('poderFogo', novoValor.toString());
+const Fire = document.getElementById('poderFogo');
+Fire.textContent = novoValor;
+}
+
+//-----------------------IDADE-------------------------------------------
+// Função para obter o valor atual da idade do armazenamento local
+function getIdade() {
+const idade = localStorage.getItem('idade');
+return idade ? parseInt(idade) : 0;
+}
+
+// Função para atualizar o valor de idade na página e no armazenamento local
+function atualizarAnos(novoAno) {
+  localStorage.setItem('anos', novoAno.toString());
+  const anosElement = document.getElementById('anosDisplay');
+  anosElement.textContent = novoAno;
+}
+
+function atualizarIdade(novaIdade) {
+  localStorage.setItem('idade', novaIdade.toString());
+  const idadeElement = document.getElementById('idadeDisplay');
+  idadeElement.textContent = novaIdade;
+}
+function atualizarAnos(novoAno) {
+  localStorage.setItem('anos', novoAno.toString());
+  const anosElement = document.getElementById('anosDisplay');
+  anosElement.textContent = novoAno;
+
+  // Verificar se o jogador se aposentou
+  if (novoAno > 69) {
+    window.location.href = "aposentou.html";
   }
 }
+
 
 //Para transformar mesês em anos-----------------------------------------------------
 function getIdade() {
@@ -99,4 +167,106 @@ function atualizarIdade(novaIdade) {
   idadeElement.textContent = novaIdade;
 }
 
+// Função para atualizar o valor do idade na página
+function atualizarIdadeNaPagina() {
+const idadeAtual = getIdade();
+const idadeElement = document.getElementById('idadeDisplay');
+idadeElement.textContent = idadeAtual;
+}
+function atualizarAnosNaPagina() {
+  const anosAtual = getAnos();
+  const anosElement = document.getElementById('anosDisplay');
+  anosElement.textContent = anosAtual;
+  }
 
+
+
+//-----------------------VIDA------------------------------------
+function getVida() {
+const vida = localStorage.getItem('vida');
+return vida ? parseInt(vida) : 100;
+}
+
+function atualizarVida(novaVida) {
+if (novaVida > 100) {
+  novaVida = 100;
+}
+
+if (novaVida <= 0) {
+  window.location.href = "morreu.html";
+  return;
+}
+
+localStorage.setItem('vida', novaVida.toString());
+const vidaElement = document.getElementById('vidaDisplay');
+vidaElement.textContent = novaVida;
+}
+
+// Função para atualizar o valor de vida na página
+function atualizarVidaNaPagina() {
+const vidaAtual = getVida();
+const vidaElement = document.getElementById('vidaDisplay');
+vidaElement.textContent = vidaAtual;
+}
+
+//-----------------index seleção de personagem------------------------
+function novoJogo(personagem, anos, forca, inteligencia, poderFogo) {
+  localStorage.clear();
+    // Obtenha o objeto do personagem selecionado
+    const selectedPersonagem = personagens[personagem];
+  
+    // Atualize os valores das estatísticas
+    selectedPersonagem.anos = anos;
+    selectedPersonagem.força = forca;
+    selectedPersonagem.inteligencia = inteligencia;
+    selectedPersonagem.poderDeFogo = poderFogo;
+  
+    // Salve o objeto atualizado de volta no localStorage
+    localStorage.setItem('selectedPersonagem', JSON.stringify(selectedPersonagem));
+  
+    // Salvar a imagem do personagem
+    localStorage.setItem('selectedImage', document.getElementById(personagem).querySelector('img').src);
+  }
+  
+
+//------------------------------------------------
+
+function toggleDescription(element) {
+  const descricao = element.querySelector('.discricao');
+  descricao.classList.toggle('show-description');
+}
+
+function transferImage(imageUrl) {
+  localStorage.setItem('selectedImage', imageUrl);
+}
+
+if (imageUrl) {
+  selectedImage.src = imageUrl;
+}
+
+function carregarJogo() {
+  // Verifique se há algum valor no Local Storage
+  if (localStorage.getItem("selectedImage") !== null) {
+    // Se houver um valor, redirecione para a página estatisticas.html
+    window.location.href = "estatisticas.html";
+  } else {
+    // Caso contrário, exiba um alerta
+    alert("Você não possui jogo salvo, para carregar um jogo é necessário começar um antes!");
+  }
+}
+
+
+
+//-----------------------ATUALIZAR------------------------------------
+window.addEventListener('load', function () {
+  atualizarDinheiroNaPagina();
+  atualizarIdadeNaPagina();
+  atualizarAnosNaPagina();
+  atualizarVidaNaPagina();
+  atualizarResistencia(getResistencia());
+  atualizarInteligencia(getInteligencia()); // Passa o valor da inteligência do armazenamento local
+  atualizarForca(getForca()); // Passa o valor da força do armazenamento local
+  atualizarFire(getPoderFogo()); // Passa o valor da força do armazenamento local
+  
+  });
+  
