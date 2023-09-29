@@ -84,6 +84,8 @@ document.querySelector('.crimes form').addEventListener('submit', function (e) {
     'superMercado': 300 + Math.floor(Math.random() * 50),
   };
 
+  
+
   if (poderPersonagemAtual > dificuldade[crimeSelecionado]) {
     // Calcular os valores aleatórios a cada vez que um crime é cometido
     const valorDoCrime = valoresDosCrimes[crimeSelecionado];
@@ -91,8 +93,18 @@ document.querySelector('.crimes form').addEventListener('submit', function (e) {
     const novoDinheiro = dinheiroAtual + valorDoCrime;
     atualizarDinheiro(novoDinheiro);
 
-  textoSolo.innerHTML =`<p>Você botou para quebar e ganhou ${`$`+valorDoCrime}, talvez você leve jeito para a coisa!</p>`
+    const textSucessed = [
+      `<p>Você botou para quebrar e ganho ${`$`+valorDoCrime}, talvez você leve jeito para a coisa!</p>`,
+      `<p>É assim que se faz, "Tudo mundo no chão, isso é um assalto! Você faturou ${`$`+valorDoCrime}.</p>`,
+      `<p>Mas quem diria que você irira conseguir? Não era eu... você ganhou ${`$`+valorDoCrime}</p>`,
+      `<p>Seria você o próximo Jesse James? Acho que também não é para tanto, mas você conseguiu ${`$`+valorDoCrime}</p>`,
+      `<p>Ninguém viu nada, ninguém sabe de nada. Você é um gênio do crime e arrecadou ${`$`+valorDoCrime}!</p>`,
+      `<p>Você se saiu tão bem que até Al CApone se orgulharia de você além de ganhar ${`$`+valorDoCrime}</p>`
+    ];
     
+  const mensagemSucesso = textSucessed[Math.floor(Math.random() * textSucessed.length)];
+  textoSolo.innerHTML = mensagemSucesso;
+
   //atualizar idade
 const tempoDoCrime = tempoCrime[crimeSelecionado];
 const idadeAtual = getIdade();
@@ -131,7 +143,19 @@ if (mesesAtuais + tempoDoCrime >= 12) {
 
 //--------------------Mal Sucedido----------------------------------------------//
 }else{
-textoSolo.innerHTML =`<p>Você é um idiota, acha mesmo que consegue viver do crime?!</p>`
+  const textFail = [
+    `<p>Você é um idiota, acha mesmo que consegue viver do crime?!</p>`,
+    `<p>Sabê qual é o seu grande problema? Você!.</p>`,
+    `<p>Você só pode estar de brincadeira, obvio que vocÊ fracassaria</p>`,
+    `<p>Não, não, não é assim!</p>`,
+    `<p>O crime não compensa, mas pelo menos você nos proporcionou boas risadas</p>`,
+    `<p>Fracassar no crime é um talento em si. Parabéns, você é um artista!</p>`,
+    `<p>Parece que você assistiu muitos filmes de ação, mas esqueceu de estudar como os criminosos de verdade operam.</p>`,
+    `<p>Sua tentativa de crime foi tão ruim que até mesmo a polícia está rindo.</p.`
+  ];
+  
+const mensagemFail = textFail[Math.floor(Math.random() * textFail.length)];
+textoSolo.innerHTML = mensagemFail;
   //atualizar idade
 const tempoDoCrime = tempoCrime[crimeSelecionado];
 const idadeAtual = getIdade();

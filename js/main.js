@@ -7,12 +7,14 @@ const personagens = {
     "força": 10,
     "inteligencia": 20,
     "poderDeFogo": 20,
+     "dinheiro": 500,
   },
   morales: {
     "anos": 30,
     "força": 25,
     "inteligencia": 5,
-    "Dinheiro": 500,
+    "poderDeFogo": 0,
+    "dinheiro": 500,
   },
   jason: {
     "anos": 25,
