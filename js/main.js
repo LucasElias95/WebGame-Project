@@ -4,37 +4,37 @@ const selectedImage = document.getElementById('selectedImage');
 const selectedPersonagem = JSON.parse(localStorage.getItem('selectedPersonagem'));
 const personagens = {
   nicolai: {
-    "anos": 40,
-    "força": 10,
-    "inteligencia": 20,
-    "poderDeFogo": 20,
-     "dinheiro": 500,
+    anos: 40,
+    força: 10,
+    inteligencia: 20,
+    poderFogo: 20,
+    dinheiro: 500,
   },
   morales: {
-    "anos": 30,
-    "força": 25,
-    "inteligencia": 5,
-    "poderDeFogo": 0,
-    "dinheiro": 500,
+    anos: 30,
+    força: 25,
+    inteligencia: 5,
+    poderFogo: 0,
+    dinheiro: 100,
   },
   jason: {
-    "anos": 25,
-    "força": 0,
-    "inteligencia": 20,
-    "dinheiro": 1000,
+    anos: 25,
+    força: 0,
+    inteligencia: 20,
+    dinheiro: 1000,
   },
   jamal: {
     "anos": 18,
     "força": 5,
     "inteligencia": 0,
-    "poderDeFogo": 5,
+    "poderFogo": 5,
   },
 };
 
 //-----------------------DINHEIRO------------------------------------
 // Função para obter o valor atual do dinheiro do armazenamento local
 function getDinheiro() {
-  const dinheiro = localStorage.getItem('dinheiro');
+  const dinheiro = localStorage.getItem('dinheiro') + selectedPersonagem.dinheiro;
   return dinheiro ? parseInt(dinheiro) : 0;
 }
 
@@ -56,7 +56,7 @@ dinheiroElement.textContent = dinheiroAtual;
 //-----------------------INTELIGENCIA------------------------------------
 // Função para obter o valor atual do inteligencia do armazenamento local
 function getInteligencia() {
-const inteligencia = localStorage.getItem('inteligencia');
+const inteligencia = localStorage.getItem('inteligencia') + selectedPersonagem.inteligencia;
 return inteligencia ? parseInt(inteligencia) : 0;
 }
 
@@ -70,7 +70,7 @@ inteligenciaElement.textContent = novoValor;
 //-----------------------FORÇA------------------------------------
 // Função para obter o valor atual do forca do armazenamento local
 function getForca() {
-const str = localStorage.getItem('força');
+const str = localStorage.getItem('força') + selectedPersonagem.força;
 return str ? parseInt(str) : 0;
 }
 // Função para atualizar o valor da força na página e no armazenamento local
@@ -98,7 +98,7 @@ resistencia.textContent = novoValor;
 
 // Função para obter o valor atual do poder de fogo do armazenamento local
 function getPoderFogo() {
-const fogo = localStorage.getItem('poderFogo');
+const fogo = localStorage.getItem('poderFogo') + selectedPersonagem.poderFogo;
 return fogo ? parseInt(fogo) : 0;
 }
 // Função para atualizar o valor de poder de fogo na página e no armazenamento local
@@ -210,23 +210,28 @@ vidaElement.textContent = vidaAtual;
 }
 
 //-----------------index seleção de personagem------------------------
-function novoJogo(personagem, anos, forca, inteligencia, poderFogo) {
+function novoJogo(personagem) {
   localStorage.clear();
-    // Obtenha o objeto do personagem selecionado
-    const selectedPersonagem = personagens[personagem];
-  
-    // Atualize os valores das estatísticas
-    selectedPersonagem.anos = anos;
-    selectedPersonagem.força = forca;
-    selectedPersonagem.inteligencia = inteligencia;
-    selectedPersonagem.poderDeFogo = poderFogo;
-  
-    // Salve o objeto atualizado de volta no localStorage
-    localStorage.setItem('selectedPersonagem', JSON.stringify(selectedPersonagem));
-  
-    // Salvar a imagem do personagem
-    localStorage.setItem('selectedImage', document.getElementById(personagem).querySelector('img').src);
-  }
+
+  // Obtenha o objeto do personagem selecionado
+  const selectedPersonagem = personagens[personagem];
+
+  // Salve o objeto atualizado de volta no localStorage
+  localStorage.setItem('selectedPersonagem', JSON.stringify(selectedPersonagem));
+
+  // Salvar a imagem do personagem
+  localStorage.setItem('selectedImage', document.getElementById(personagem).querySelector('img').src);
+
+  // Você pode chamar as funções de atualização aqui para definir os valores corretos no localStorage
+  atualizarAnos(selectedPersonagem.anos);
+  atualizarForca(selectedPersonagem.força);
+  atualizarFire(selectedPersonagem.poderFogo);
+  atualizarInteligencia(selectedPersonagem.inteligencia);
+  atualizarDinheiro(selectedPersonagem.dinheiro);
+
+
+}
+
   
 
 //------------------------------------------------
