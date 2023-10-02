@@ -360,6 +360,11 @@ div.escola:hover{
         left: 40%;
         position: absolute;
         height: 16%;
+    }
+        
+    p.escola2{
+            margin-top: 45px;
+            text-align: center;
        
     }
 
