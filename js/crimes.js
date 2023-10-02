@@ -1,4 +1,4 @@
-const dinheiroElement = document.getElementById('dinheiro');
+const dinheiroElement = document.getElementById('dinheiroDisplay');
 const idadeElement = document.getElementById('idade');
 const anosElement = document.getElementById('anos')
 
@@ -23,10 +23,25 @@ const tempoCrime ={
       
       return forca + inteligencia + (poderDeFogo * 0.5);
     }
+//-----------------------DINHEIRO------------------------------------
 // Função para obter o valor atual do dinheiro do armazenamento local
 function getDinheiro() {
-  const dinheiro = localStorage.getItem('dinheiro');
-  return dinheiro ? parseInt(dinheiro) : 0;
+  const dinheiro = localStorage.getItem('dinheiroDisplay') ;
+  return dinheiro ? parseInt(dinheiroDisplay) : selectedPersonagem.dinheiro;
+}
+
+
+function atualizarDinheiro(novoValor) {
+  localStorage.setItem('dinheiro', novoValor.toString());
+  const dinheiroElement = document.getElementById('dinheiroDisplay'); 
+  dinheiroElement.textContent = novoValor;
+}
+
+// Função para atualizar o valor do dinheiro na página
+function atualizarDinheiroNaPagina() {
+const dinheiroAtual = getDinheiro();
+const dinheiroElement = document.getElementById('dinheiroDisplay');
+dinheiroElement.textContent = dinheiroAtual;
 }
 
 // Função para atualizar o valor do dinheiro no armazenamento local e na página

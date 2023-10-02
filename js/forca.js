@@ -4,8 +4,6 @@ const botaoAcademia = document.getElementById('treinoAcademia');
 const botaoArtesMarciais = document.getElementById('artesMarciais');
 const forcaElement = document.getElementById('força');
 
-
-
 //VALORES FORÇA
 const atributoForca = {
     'sozinho': 1,

@@ -4,6 +4,7 @@ const botaoAulaEscola = document.getElementById('aulaEscola');
 const botaoAulaParticular = document.getElementById('aulaParticular');
 const inteligencia = document.getElementById('inteligencia');
 
+
 //  VALORES INTELIGÊNCIA
 const atributoInteligencia = {
     'aulaSozinho': 1,

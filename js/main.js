@@ -24,10 +24,10 @@ const personagens = {
     dinheiro: 1000,
   },
   jamal: {
-    "anos": 18,
-    "força": 5,
-    "inteligencia": 0,
-    "poderFogo": 5,
+    anos: 18,
+    força: 5,
+    inteligencia: 0,
+    poderFogo: 5,
   },
 };
 
@@ -227,9 +227,7 @@ function novoJogo(personagem) {
   atualizarForca(selectedPersonagem.força);
   atualizarFire(selectedPersonagem.poderFogo);
   atualizarInteligencia(selectedPersonagem.inteligencia);
-  atualizarDinheiro(selectedPersonagem.dinheiro);
-
-
+  
 }
 
   
