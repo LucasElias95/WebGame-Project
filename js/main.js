@@ -34,8 +34,8 @@ const personagens = {
 //-----------------------DINHEIRO------------------------------------
 // Função para obter o valor atual do dinheiro do armazenamento local
 function getDinheiro() {
-  const dinheiro = localStorage.getItem('dinheiro') + selectedPersonagem.dinheiro;
-  return dinheiro ? parseInt(dinheiro) : 0;
+  const dinheiro = localStorage.getItem('dinheiro') ;
+  return dinheiro ? parseInt(dinheiro) : selectedPersonagem.dinheiro;
 }
 
 
@@ -56,8 +56,8 @@ dinheiroElement.textContent = dinheiroAtual;
 //-----------------------INTELIGENCIA------------------------------------
 // Função para obter o valor atual do inteligencia do armazenamento local
 function getInteligencia() {
-const inteligencia = localStorage.getItem('inteligencia') + selectedPersonagem.inteligencia;
-return inteligencia ? parseInt(inteligencia) : 0;
+const inteligencia = localStorage.getItem('inteligencia') 
+return inteligencia ? parseInt(inteligencia) : selectedPersonagem.inteligencia;
 }
 
 // Função para atualizar o valor da inteligência na página e no armazenamento local
@@ -70,8 +70,8 @@ inteligenciaElement.textContent = novoValor;
 //-----------------------FORÇA------------------------------------
 // Função para obter o valor atual do forca do armazenamento local
 function getForca() {
-const str = localStorage.getItem('força') + selectedPersonagem.força;
-return str ? parseInt(str) : 0;
+const str = localStorage.getItem('força');
+return str ? parseInt(str) : selectedPersonagem.força;
 }
 // Função para atualizar o valor da força na página e no armazenamento local
 function atualizarForca(novoValor) {
@@ -98,8 +98,8 @@ resistencia.textContent = novoValor;
 
 // Função para obter o valor atual do poder de fogo do armazenamento local
 function getPoderFogo() {
-const fogo = localStorage.getItem('poderFogo') + selectedPersonagem.poderFogo;
-return fogo ? parseInt(fogo) : 0;
+const fogo = localStorage.getItem('poderFogo');
+return fogo ? parseInt(fogo) : selectedPersonagem.poderFogo;
 }
 // Função para atualizar o valor de poder de fogo na página e no armazenamento local
 function atualizarFire(novoValor) {
@@ -112,7 +112,7 @@ Fire.textContent = novoValor;
 // Função para obter o valor atual da idade do armazenamento local
 function getIdade() {
 const idade = localStorage.getItem('idade');
-return idade ? parseInt(idade) : 0;
+return idade ? parseInt(idade) : selectedPersonagem.anos;
 }
 
 // Função para atualizar o valor de idade na página e no armazenamento local
