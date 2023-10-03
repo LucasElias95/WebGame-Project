@@ -300,7 +300,7 @@ Página Cometer crimes */
 Página Escola */
     div.inteligencia{
         text-align: center;
-        width: 40%;
+        width: 48%;
         height: 15%;
         background-color: var(--cor4);
         opacity: 0.8;
@@ -310,7 +310,7 @@ Página Escola */
     }
     div.estudar{
             text-align: center;
-            width: 40%;
+            width: 48%;
             height: 15%;
             background-color: var(--cor1);
             opacity: 0.8;
@@ -323,7 +323,7 @@ div.estudar:hover{
         }           
     div.escola{
         text-align: center;
-        width: 40%;
+        width: 48%;
         height: 15%;
         background-color: var(--cor1);
         opacity: 0.8;
@@ -336,7 +336,7 @@ div.escola:hover{
 }
     div.particular{
             text-align: center;
-            width: 40%;
+            width: 48%;
             height: 15%;
             background-color: var(--cor1);
             opacity: 0.8;
@@ -361,6 +361,7 @@ div.escola:hover{
         text-align: center;
     }
     p.escola{
+        font-size: small;
         margin-top: 1%;
         color: var(--cor0);
     }
@@ -371,9 +372,10 @@ div.escola:hover{
         position: absolute;
     }
         
-    p.escola2{
-        font-family: var(--fonte-destaque);
-            margin-top: 1%;
+    h2.escola{
+            font-size: medium;
+            font-family: var(--fonte-destaque);
+            margin-top: 6%;
             text-align: center;
        
     }
@@ -382,7 +384,7 @@ div.escola:hover{
 Página Academia */
 div.força{
     text-align: center;
-    width: 40%;
+    width: 48%;
     height: 15%;
     background-color: var(--cor4);
     opacity: 0.8;
@@ -393,7 +395,7 @@ div.força{
 
 div.sozinho{
     text-align: center;
-            width: 40%;
+            width: 48%;
             height: 15%;
             background-color: var(--cor1);
             opacity: 0.8;
@@ -407,7 +409,7 @@ div.sozinho:hover{
 }           
 div.treinoAcademia{
     text-align: center;
-    width: 40%;
+    width: 48%;
     height: 15%;
     background-color: var(--cor1);
     opacity: 0.8;
@@ -420,7 +422,7 @@ background-color: var(--cor4);
 }
 div.treinoArtesMarciais{
     text-align: center;
-    width: 40%;
+    width: 48%;
     height: 15%;
     background-color: var(--cor1);
     opacity: 0.8;
@@ -435,11 +437,13 @@ background-color: var(--cor4);
 }
 
 p.academia{
-    margin-top: 1%;
+        font-size: small;
+        margin-top: 1%;
         color: var(--cor0);
 }
 
 input.academia{
+        margin-top: 1%;
         width: 30%;
         left: 40%;
         position: absolute;
