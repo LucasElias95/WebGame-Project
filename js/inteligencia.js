@@ -14,8 +14,8 @@ const atributoInteligencia = {
 
 const custoInteligencia = {
     'aulaSozinho': 0,
-    'aulaEscola': -500,
-    'aulaParticular': -1000,
+    'aulaEscola': -300,
+    'aulaParticular': -500,
 }
 
 const tempoEstudo = {
@@ -67,7 +67,7 @@ botaoAulaSozinho.addEventListener('click', function () {
 
 
 botaoAulaEscola.addEventListener('click', function () {
-    if (localStorage.getItem("dinheiro") >= 500) {
+    if (localStorage.getItem("dinheiro") >= 300) {
         const atributoDeInteligencia = atributoInteligencia['aulaEscola'];
     const InteligenciaAtual = getInteligencia();
     const novaInteligencia = InteligenciaAtual + atributoDeInteligencia;
@@ -102,7 +102,7 @@ botaoAulaEscola.addEventListener('click', function () {
 });
 
 botaoAulaParticular.addEventListener('click', function () {
-    if (localStorage.getItem("dinheiro") >= 1000) {
+    if (localStorage.getItem("dinheiro") >= 500) {
         const atributoDeInteligencia = atributoInteligencia['aulaParticular'];
     const InteligenciaAtual = getInteligencia();
     const novaInteligencia = InteligenciaAtual + atributoDeInteligencia;

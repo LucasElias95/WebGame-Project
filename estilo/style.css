@@ -255,7 +255,7 @@ Página Cometer crimes */
     input{
         left: 26%;
         position: absolute;
-        margin-top: 3%;
+        margin-top: 4%;
     }
 
     label{
@@ -298,42 +298,51 @@ Página Cometer crimes */
 
     /* -------------------------------------------
 Página Escola */
-
+    div.inteligencia{
+        text-align: center;
+        width: 40%;
+        height: 15%;
+        background-color: var(--cor4);
+        opacity: 0.8;
+        position: absolute;
+        left: 200px;
+        margin-top: 1%;
+    }
     div.estudar{
             text-align: center;
-            width: 30%;
-            height: 30%;
+            width: 40%;
+            height: 15%;
             background-color: var(--cor1);
             opacity: 0.8;
             position: absolute;
             left: 200px;
-            top: 150px;
+            top: 46%;
            }
 div.estudar:hover{
             background-color: var(--cor4);
         }           
     div.escola{
         text-align: center;
-        width: 30%;
-        height: 30%;
+        width: 40%;
+        height: 15%;
         background-color: var(--cor1);
         opacity: 0.8;
         position: absolute;
         left: 200px;
-        top: 350px;        
+        top: 63%;        
 }
 div.escola:hover{
     background-color: var(--cor4);
 }
     div.particular{
             text-align: center;
-            width: 30%;
-            height: 30%;
+            width: 40%;
+            height: 15%;
             background-color: var(--cor1);
             opacity: 0.8;
             position: absolute;
             left: 200px;
-            top: 550px;
+            top: 80%;
           
     }
 
@@ -352,6 +361,7 @@ div.escola:hover{
         text-align: center;
     }
     p.escola{
+        margin-top: 1%;
         color: var(--cor0);
     }
    
@@ -359,54 +369,64 @@ div.escola:hover{
         width: 30%;
         left: 40%;
         position: absolute;
-        height: 16%;
     }
         
     p.escola2{
-            margin-top: 45px;
+        font-family: var(--fonte-destaque);
+            margin-top: 1%;
             text-align: center;
        
     }
 
     /* -------------------------------------------
 Página Academia */
-
-div.sozinho{
+div.força{
     text-align: center;
-    width: 30%;
-    height: 30%;
-    background-color: var(--cor1);
+    width: 40%;
+    height: 15%;
+    background-color: var(--cor4);
     opacity: 0.8;
     position: absolute;
     left: 200px;
-    top: 150px;
+    margin-top: 1%;
+}
+
+div.sozinho{
+    text-align: center;
+            width: 40%;
+            height: 15%;
+            background-color: var(--cor1);
+            opacity: 0.8;
+            position: absolute;
+            left: 200px;
+            top: 46%;
    }
 
 div.sozinho:hover{
     background-color: var(--cor4);
 }           
 div.treinoAcademia{
-text-align: center;
-width: 30%;
-height: 30%;
-background-color: var(--cor1);
-opacity: 0.8;
-position: absolute;
-left: 200px;
-top: 350px;        
+    text-align: center;
+    width: 40%;
+    height: 15%;
+    background-color: var(--cor1);
+    opacity: 0.8;
+    position: absolute;
+    left: 200px;
+    top: 63%;        
 }
 div.treinoAcademia:hover{
 background-color: var(--cor4);
 }
 div.treinoArtesMarciais{
     text-align: center;
-    width: 30%;
-    height: 30%;
+    width: 40%;
+    height: 15%;
     background-color: var(--cor1);
     opacity: 0.8;
     position: absolute;
     left: 200px;
-    top: 550px;
+    top: 80%;
   
 }
 
@@ -415,14 +435,14 @@ background-color: var(--cor4);
 }
 
 p.academia{
-    color: var(--cor0);
+    margin-top: 1%;
+        color: var(--cor0);
 }
 
 input.academia{
-    width: 30%;
-    left: 40%;
-    position: absolute;
-    height: 16%;
+        width: 30%;
+        left: 40%;
+        position: absolute;
 }  
 
     /* -------------------------------------------

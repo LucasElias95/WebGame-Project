@@ -4,7 +4,7 @@ const botaoParticular = document.getElementById('particular');
 
 const curaVida = {
     'publico': 5,
-    'particular': 15,
+    'particular': 10,
 };
 
 const custoVida = {
@@ -13,8 +13,8 @@ const custoVida = {
 };
 
 const tempoVida = {
-    'publico': 1,
-    'particular': 2,
+    'publico': 2,
+    'particular': 1,
 };
 
 function getVida() {

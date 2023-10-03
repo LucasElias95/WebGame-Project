@@ -2,7 +2,15 @@
 const imageUrl = localStorage.getItem('selectedImage');
 const selectedImage = document.getElementById('selectedImage');
 const selectedPersonagem = JSON.parse(localStorage.getItem('selectedPersonagem'));
+
 const personagens = {
+  jason: {
+    anos: 25,
+    força: 0,
+    inteligencia: 20,
+    dinheiro: 1000,
+  },
+
   nicolai: {
     anos: 40,
     força: 10,
@@ -17,12 +25,7 @@ const personagens = {
     poderFogo: 0,
     dinheiro: 100,
   },
-  jason: {
-    anos: 25,
-    força: 0,
-    inteligencia: 20,
-    dinheiro: 1000,
-  },
+ 
   jamal: {
     anos: 18,
     força: 5,
@@ -38,6 +41,11 @@ function getDinheiro() {
   return dinheiro ? parseInt(dinheiro) : selectedPersonagem.dinheiro;
 }
 
+function atualizarDinheiroo(novoValor) {
+  localStorage.setItem('dinheiro', novoValor.toString());
+  const dinheiroElement = document.getElementById('dinheiro');
+  dinheiroElement.textContent = novoValor;
+  }
 
 function atualizarDinheiro(novoValor) {
   localStorage.setItem('dinheiro', novoValor.toString());
@@ -227,6 +235,7 @@ function novoJogo(personagem) {
   atualizarForca(selectedPersonagem.força);
   atualizarFire(selectedPersonagem.poderFogo);
   atualizarInteligencia(selectedPersonagem.inteligencia);
+  atualizarDinheiro(selectedPersonagem.dinheiro);
   
 }
 
@@ -262,6 +271,7 @@ function carregarJogo() {
 
 //-----------------------ATUALIZAR------------------------------------
 window.addEventListener('load', function () {
+  
   atualizarDinheiroNaPagina();
   atualizarIdadeNaPagina();
   atualizarAnosNaPagina();
@@ -270,6 +280,7 @@ window.addEventListener('load', function () {
   atualizarInteligencia(getInteligencia()); // Passa o valor da inteligência do armazenamento local
   atualizarForca(getForca()); // Passa o valor da força do armazenamento local
   atualizarFire(getPoderFogo()); // Passa o valor da força do armazenamento local
+  atualizarDinheiro(getDinheiro());
   
   });
   

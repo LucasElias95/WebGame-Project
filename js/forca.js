@@ -13,8 +13,8 @@ const atributoForca = {
 
 const custoTreino = {
     'sozinho': 0,
-    'treinoAcademia': -500,
-    'artesMarciais': -1000,
+    'treinoAcademia': -300,
+    'artesMarciais': -500,
 }
 
 const tempoTreino = {
@@ -67,7 +67,7 @@ botaoSozinho.addEventListener('click', function () {
 
 
 botaoAcademia.addEventListener('click', function () {
-    if (localStorage.getItem("dinheiro") >= 500) {
+    if (localStorage.getItem("dinheiro") >= 300) {
         const atributoDeForca = atributoForca['treinoAcademia'];
         const forcaAtual = getForca();
         const novaForca = forcaAtual + atributoDeForca;
@@ -102,7 +102,7 @@ botaoAcademia.addEventListener('click', function () {
 });
 
 botaoArtesMarciais.addEventListener('click', function () {
-    if (localStorage.getItem("dinheiro") >= 1000) {
+    if (localStorage.getItem("dinheiro") >= 500) {
         const atributoDeForca = atributoForca['artesMarciais'];
         const forcaAtual = getForca();
         const novaForca = forcaAtual + atributoDeForca;

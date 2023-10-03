@@ -1,4 +1,4 @@
-const dinheiroElement = document.getElementById('dinheiroDisplay');
+const dinheiroElement = document.getElementById('dinheiro');
 const idadeElement = document.getElementById('idade');
 const anosElement = document.getElementById('anos')
 
@@ -23,47 +23,7 @@ const tempoCrime ={
       
       return forca + inteligencia + (poderDeFogo * 0.5);
     }
-//-----------------------DINHEIRO------------------------------------
-// Função para obter o valor atual do dinheiro do armazenamento local
-function getDinheiro() {
-  const dinheiro = localStorage.getItem('dinheiroDisplay') ;
-  return dinheiro ? parseInt(dinheiroDisplay) : selectedPersonagem.dinheiro;
-}
 
-
-function atualizarDinheiro(novoValor) {
-  localStorage.setItem('dinheiro', novoValor.toString());
-  const dinheiroElement = document.getElementById('dinheiroDisplay'); 
-  dinheiroElement.textContent = novoValor;
-}
-
-// Função para atualizar o valor do dinheiro na página
-function atualizarDinheiroNaPagina() {
-const dinheiroAtual = getDinheiro();
-const dinheiroElement = document.getElementById('dinheiroDisplay');
-dinheiroElement.textContent = dinheiroAtual;
-}
-
-// Função para atualizar o valor do dinheiro no armazenamento local e na página
-function atualizarDinheiro(novoValor) {
-  localStorage.setItem('dinheiro', novoValor.toString());
-  dinheiroElement.textContent = novoValor;
-}
-
-function getReistencia() {
-  const resist = localStorage.getItem('resistencia');
-  return resist ? parseInt(resist) : 0;
-}
-
-function atualizarResistencia(novoValor) {
-  localStorage.setItem('resistencia', novoValor.toString());
-  equip.textContent = novoValor;
-}
-
-function getVida() {
-  const vida = localStorage.getItem('vida');
-  return vida ? parseInt(vida) : 100;
-  }
 
 
 //  Botão "Cometer crime"
@@ -93,7 +53,7 @@ document.querySelector('.crimes form').addEventListener('submit', function (e) {
   
   const dificuldade = {
     'rua': 20 + Math.floor(Math.random() * 15),
-    'casa': 60 + Math.floor(Math.random() * 70),
+    'casa': 50 + Math.floor(Math.random() * 20),
     'conveniencia': 100 + Math.floor(Math.random() * 20),
     'carro': 160 + Math.floor(Math.random() * 30),
     'superMercado': 300 + Math.floor(Math.random() * 50),
@@ -344,12 +304,13 @@ atualizarResistencia(novaResistencia);
 
 }}});
   
-
+/* NÃO LEMBRO PARA O QUE ERA, MAS PARECE NÃO FAZER DIFERENÇA
 // Verifique se o dinheiro já está armazenado no armazenamento local
 const dinheiroAtual = getDinheiro();
 if (dinheiroAtual === 0) {
-  localStorage.setItem('dinheiro', '0'); // Defina um valor inicial de dinheiro aqui
+  localStorage.setItem('dinheiro', ''); // Defina um valor inicial de dinheiro aqui
 }
 
 // Atualize o valor do dinheiro na página
 atualizarDinheiro(dinheiroAtual);
+*/
