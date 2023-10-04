@@ -217,6 +217,30 @@ const vidaElement = document.getElementById('vidaDisplay');
 vidaElement.textContent = vidaAtual;
 }
 
+//---------------------Mercenarios-----------------------------------
+// Função para obter o valor atual da força do armazenamento local
+function getMercenarios() {
+  const mercenarios = localStorage.getItem('mercenarios');
+  return mercenarios ? parseInt(mercenarios) : 0;
+}
+
+// Função para atualizar o valor da força na página e no armazenamento local
+function atualizarMercenarios(novoValor) {
+  localStorage.setItem('mercenarios', novoValor.toString());
+  mercenariosElement.textContent = novoValor;
+}
+
+function getPoderMercenarios(){
+  const poderMercenarios = localStorage.getItem('poderMercenarios');
+  return poderMercenarios ? parseInt(poderMercenarios): 0;
+}
+  function atualizarPoderMercenarios(novoValor) {
+    localStorage.setItem('poderMercenarios', novoValor.toString());
+    poderMercenariosElement.textContent = novoValor;
+    
+  }
+
+
 //-----------------index seleção de personagem------------------------
 function novoJogo(personagem) {
   localStorage.clear();
@@ -281,6 +305,8 @@ window.addEventListener('load', function () {
   atualizarForca(getForca()); // Passa o valor da força do armazenamento local
   atualizarFire(getPoderFogo()); // Passa o valor da força do armazenamento local
   atualizarDinheiro(getDinheiro());
+  atualizarMercenarios(getMercenarios());
+  atualizarPoderMercenarios(getPoderMercenarios());
   
   });
   

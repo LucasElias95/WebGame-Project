@@ -170,24 +170,27 @@ if (mesesAtuais + tempoDoCrime >= 12) {
 
  }});
  
-//----------------crimes em gang-----------------------
+
+ 
+
+//----------------CRIMES EM GANG-----------------------
 
 document.querySelector('.crimesGangue form').addEventListener('submit', function (e) {
   e.preventDefault();
 
   const crimeSelecionado = document.querySelector('#gang').value;
   const poderPersonagemAtual = calcularPoderPersonagem();
+  const poderMercenarios = getPoderMercenarios();
   var textoGang = document.getElementById('textoGang');
 
- /*const  mercenariosNecessarios ={
-  'caixa': 1,
-  'consecionaria': 2,
-  'carroForte':3,
-  'joalheria': 4,
-  'banco':4,
- };
-*/
-
+  const  mercenariosNecessarios ={
+    'caixa': 1,
+    'consecionaria': 2,
+    'carroForte':2,
+    'joalheria': 3,
+    'banco':3,
+   };
+  
   const valoresDosCrimes = {
     'none': 0,
     'caixa': Math.floor(Math.random() * 1100) + 750,
@@ -214,17 +217,33 @@ document.querySelector('.crimesGangue form').addEventListener('submit', function
     'banco': 2500 + Math.floor(Math.random() * 500),
   };
 
-  if (nMercenarios > mercenariosNecessarios) {
+  if (poderPersonagemAtual + poderMercenarios > dificuldade[crimeSelecionado] && localStorage.getItem("mercenarios") >= mercenariosNecessarios[crimeSelecionado]){
   
-  if (poderPersonagemAtual > dificuldade[crimeSelecionado]) {
     // Calcular os valores aleatórios a cada vez que um crime é cometido
     const valorDoCrime = valoresDosCrimes[crimeSelecionado];
     const dinheiroAtual = getDinheiro();
     const novoDinheiro = dinheiroAtual + valorDoCrime;
     atualizarDinheiro(novoDinheiro);
 
-  textoGang.innerHTML =`<p>Você botou para quebar e ganhou ${`$`+valorDoCrime}, talvez você leve jeito para a coisa!</p>`
+    const textSucessed = [
+      `<p>Você botou para quebrar e ganho ${`$`+valorDoCrime}, talvez você leve jeito para a coisa!</p>`,
+      `<p>É assim que se faz, "Tudo mundo no chão, isso é um assalto! Você faturou ${`$`+valorDoCrime}.</p>`,
+      `<p>Mas quem diria que você irira conseguir? Não era eu... você ganhou ${`$`+valorDoCrime}</p>`,
+      `<p>Seria você o próximo Jesse James? Acho que também não é para tanto, mas você conseguiu ${`$`+valorDoCrime}</p>`,
+      `<p>Ninguém viu nada, ninguém sabe de nada. Você é um gênio do crime e arrecadou ${`$`+valorDoCrime}!</p>`,
+      `<p>Você se saiu tão bem que até Al CApone se orgulharia de você além de ganhar ${`$`+valorDoCrime}</p>`
+    ];
     
+  const mensagemSucesso = textSucessed[Math.floor(Math.random() * textSucessed.length)];
+  textoGang.innerHTML = mensagemSucesso;
+  
+ /*
+  //atualizar mercenarios
+  const mercenariosAtual = getMercenarios()
+  const novoMercenarios = mercenariosAtual - mercenariosNecessarios
+  atualizarMercenarios(novoMercenarios);
+  */
+
    // Atualizar idade
  const tempoDoCrime = tempoCrime[crimeSelecionado];
  const idadeAtual = getIdade();
@@ -258,11 +277,25 @@ if (danoCausado <= resistenciaAtual) {
   novaVida = vidaAtual - (danoCausado - resistenciaAtual);
 }
 
+
+ 
 atualizarVida(novaVida);
 atualizarResistencia(novaResistencia);
+
 //--------------------Mal Sucedido----------------------------------------------//
-}else{
-  textoGang.innerHTML =`<p>Você é um idiota, acha mesmo que consegue viver do crime?!</p>`
+} else if (poderPersonagemAtual + poderMercenarios <= dificuldade[crimeSelecionado] && localStorage.getItem("mercenarios") >= mercenariosNecessarios[crimeSelecionado]) {
+  const textFail = [
+    `<p>Você é um idiota, acha mesmo que consegue viver do crime?!</p>`,
+    `<p>Sabê qual é o seu grande problema? Você!.</p>`,
+    `<p>Você só pode estar de brincadeira, obvio que vocÊ fracassaria</p>`,
+    `<p>Não, não, não é assim!</p>`,
+    `<p>O crime não compensa, mas pelo menos você nos proporcionou boas risadas</p>`,
+    `<p>Fracassar no crime é um talento em si. Parabéns, você é um artista!</p>`,
+    `<p>Parece que você assistiu muitos filmes de ação, mas esqueceu de estudar como os criminosos de verdade operam.</p>`,
+    `<p>Sua tentativa de crime foi tão ruim que até mesmo a polícia está rindo.</p.`
+  ];
+  const mensagemFail = textFail[Math.floor(Math.random() * textFail.length)];
+textoGang.innerHTML = mensagemFail;
     //atualizar idade
   const tempoDoCrime = tempoCrime[crimeSelecionado];
   const idadeAtual = getIdade();
@@ -278,7 +311,13 @@ atualizarResistencia(novaResistencia);
     const novaIdade = idadeAtual + tempoDoCrime;
     atualizarIdade(novaIdade);
   }
-  
+
+  /*
+  //atualizar mercenarios
+  const mercenariosAtual = getMercenarios()
+  const novoMercenarios = mercenariosAtual - mercenariosNecessarios
+  atualizarMercenarios(novoMercenarios);
+  */
    //danos
    const danoCausado = dano[crimeSelecionado];
    const resistenciaAtual = getResistencia();
@@ -298,11 +337,10 @@ atualizarResistencia(novaResistencia);
    
    atualizarVida(novaVida);
    atualizarResistencia(novaResistencia);
-
-   //} else {
-  //textoGang.innerHTML = `<p>Você não tem mercenários suficientes para te ajudar, para cometer esse crime é necessário ter ${mercenariosNecessarios}</p>`
-
-}}});
+ 
+  }else{
+    textoGang.innerHTML= `<p>"Você não possui a quantiidade de mercenários necessários você precisa ter ${mercenariosNecessarios[crimeSelecionado]}"</p>`;
+  }
   
 /* NÃO LEMBRO PARA O QUE ERA, MAS PARECE NÃO FAZER DIFERENÇA
 // Verifique se o dinheiro já está armazenado no armazenamento local
@@ -314,3 +352,4 @@ if (dinheiroAtual === 0) {
 // Atualize o valor do dinheiro na página
 atualizarDinheiro(dinheiroAtual);
 */
+});
