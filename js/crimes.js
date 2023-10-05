@@ -24,8 +24,13 @@ const tempoCrime ={
       return forca + inteligencia + (poderDeFogo * 0.5);
     }
 
-
-
+    function calcularPoderPersonagemGang() {
+      const forca = getForca(); 
+      const inteligencia = getInteligencia(); 
+      const poderDeFogo = getPoderFogo(); 
+      
+      return (forca*0.5) + inteligencia + (poderDeFogo * 0.5);
+    }
 //  Botão "Cometer crime"
 document.querySelector('.crimes form').addEventListener('submit', function (e) {
   e.preventDefault();
@@ -35,28 +40,28 @@ document.querySelector('.crimes form').addEventListener('submit', function (e) {
 
   const valoresDosCrimes = {
     'none': 0,
-    'rua': Math.floor(Math.random() * 50) + 10,
-    'casa': Math.floor(Math.random() * 100) + 60,
-    'conveniencia': Math.floor(Math.random() * 300) + 110,
-    'carro': Math.floor(Math.random() * 600) + 320,
-    'superMercado': Math.floor(Math.random()* 1000) + 700
+    'rua': Math.floor(Math.random() * 40) + 10,
+    'casa': Math.floor(Math.random() * 200) + 100,
+    'conveniencia': Math.floor(Math.random() * 100) + 400,
+    'carro': Math.floor(Math.random() * 200) + 600,
+    'superMercado': Math.floor(Math.random()* 300) + 900
   };
 
   const dano = {
     'none': 0,
     'rua': Math.floor(Math.random() * 4) + 1,
-    'casa': Math.floor(Math.random() * 5) + 3,
-    'conveniencia': Math.floor(Math.random() * 10) + 5,
-    'carro': Math.floor(Math.random() * 15) + 7, 
-    'superMercado': Math.floor(Math.random()* 20) + 9,
+    'casa': Math.floor(Math.random() * 3) + 5,
+    'conveniencia': Math.floor(Math.random() * 5) + 8,
+    'carro': Math.floor(Math.random() * 5) + 15, 
+    'superMercado': Math.floor(Math.random()* 5) + 20,
   }
   
   const dificuldade = {
     'rua': 20 + Math.floor(Math.random() * 15),
     'casa': 50 + Math.floor(Math.random() * 20),
-    'conveniencia': 100 + Math.floor(Math.random() * 20),
-    'carro': 160 + Math.floor(Math.random() * 30),
-    'superMercado': 300 + Math.floor(Math.random() * 50),
+    'conveniencia': 90 + Math.floor(Math.random() * 20),
+    'carro': 130 + Math.floor(Math.random() * 30),
+    'superMercado': 170 + Math.floor(Math.random() * 30),
   };
 
   
@@ -179,8 +184,9 @@ document.querySelector('.crimesGangue form').addEventListener('submit', function
   e.preventDefault();
 
   const crimeSelecionado = document.querySelector('#gang').value;
-  const poderPersonagemAtual = calcularPoderPersonagem();
-  const poderMercenarios = getPoderMercenarios();
+  const poderPersonagemAtual = calcularPoderPersonagemGang();
+  const poderM = getPoderM();
+  
   var textoGang = document.getElementById('textoGang');
 
   const  mercenariosNecessarios ={
@@ -193,31 +199,31 @@ document.querySelector('.crimesGangue form').addEventListener('submit', function
   
   const valoresDosCrimes = {
     'none': 0,
-    'caixa': Math.floor(Math.random() * 1100) + 750,
-    'consecionaria': Math.floor(Math.random() * 1500) + 1200,
-    'carroForte': Math.floor(Math.random() * 3000) + 2000,
-    'joalheria': Math.floor(Math.random() * 5500) + 3500,
-    'banco': Math.floor(Math.random() * 10000) + 6000,
+    'caixa': Math.floor(Math.random() * 2000) + 1000,
+    'consecionaria': Math.floor(Math.random() * 5000) + 2000,
+    'carroForte': Math.floor(Math.random() * 8000) + 5000,
+    'joalheria': Math.floor(Math.random() * 20000) + 6000,
+    'banco': Math.floor(Math.random() * 50000) + 10000,
   };
  
  const dano = {
     'none': 0,
-    'caixa': Math.floor(Math.random() * 25) + 10, 
-    'consecionaria': Math.floor(Math.random() * 30) + 10,
-    'carroForte': Math.floor(Math.random() * 35) + 10, 
-    'joalheria': Math.floor(Math.random() * 40) + 20, 
-    'banco': Math.floor(Math.random() * 45) + 20, 
+    'caixa': Math.floor(Math.random() * 15) + 10, 
+    'consecionaria': Math.floor(Math.random() * 5) + 30,
+    'carroForte': Math.floor(Math.random() * 5) + 40, 
+    'joalheria': Math.floor(Math.random() * 10) + 50, 
+    'banco': Math.floor(Math.random() * 10) + 60, 
   }
 
   const dificuldade = {
-    'caixa': 450 + Math.floor(Math.random() * 50),
-    'consecionaria': 650 + Math.floor(Math.random() * 100),
-    'carroForte': 900 + Math.floor(Math.random() * 100),
+    'caixa': 400 + Math.floor(Math.random() * 100),
+    'consecionaria': 600 + Math.floor(Math.random() * 100),
+    'carroForte': 800 + Math.floor(Math.random() * 200),
     'joalheria': 1500 + Math.floor(Math.random() * 200),
     'banco': 2500 + Math.floor(Math.random() * 500),
   };
 
-  if (poderPersonagemAtual + poderMercenarios > dificuldade[crimeSelecionado] && localStorage.getItem("mercenarios") >= mercenariosNecessarios[crimeSelecionado]){
+  if (poderPersonagemAtual + poderM > dificuldade[crimeSelecionado] && localStorage.getItem("mercenarios") >= mercenariosNecessarios[crimeSelecionado]){
   
     // Calcular os valores aleatórios a cada vez que um crime é cometido
     const valorDoCrime = valoresDosCrimes[crimeSelecionado];
@@ -237,12 +243,6 @@ document.querySelector('.crimesGangue form').addEventListener('submit', function
   const mensagemSucesso = textSucessed[Math.floor(Math.random() * textSucessed.length)];
   textoGang.innerHTML = mensagemSucesso;
   
- /*
-  //atualizar mercenarios
-  const mercenariosAtual = getMercenarios()
-  const novoMercenarios = mercenariosAtual - mercenariosNecessarios
-  atualizarMercenarios(novoMercenarios);
-  */
 
    // Atualizar idade
  const tempoDoCrime = tempoCrime[crimeSelecionado];
@@ -259,6 +259,9 @@ document.querySelector('.crimesGangue form').addEventListener('submit', function
    const novaIdade = idadeAtual + tempoDoCrime;
    atualizarIdade(novaIdade);
  }
+  
+  localStorage.setItem("mercenarios", 0);
+  localStorage.setItem("poderM", 0);
 
 // danos
 const danoCausado = dano[crimeSelecionado];
@@ -277,13 +280,13 @@ if (danoCausado <= resistenciaAtual) {
   novaVida = vidaAtual - (danoCausado - resistenciaAtual);
 }
 
-
- 
 atualizarVida(novaVida);
 atualizarResistencia(novaResistencia);
+ 
+
 
 //--------------------Mal Sucedido----------------------------------------------//
-} else if (poderPersonagemAtual + poderMercenarios <= dificuldade[crimeSelecionado] && localStorage.getItem("mercenarios") >= mercenariosNecessarios[crimeSelecionado]) {
+} else if (poderPersonagemAtual + poderM <= dificuldade[crimeSelecionado] && localStorage.getItem("mercenarios") >= mercenariosNecessarios[crimeSelecionado]) {
   const textFail = [
     `<p>Você é um idiota, acha mesmo que consegue viver do crime?!</p>`,
     `<p>Sabê qual é o seu grande problema? Você!.</p>`,
@@ -312,12 +315,9 @@ textoGang.innerHTML = mensagemFail;
     atualizarIdade(novaIdade);
   }
 
-  /*
-  //atualizar mercenarios
-  const mercenariosAtual = getMercenarios()
-  const novoMercenarios = mercenariosAtual - mercenariosNecessarios
-  atualizarMercenarios(novoMercenarios);
-  */
+  localStorage.setItem("mercenarios", 0);
+  localStorage.setItem("poderM", 0);
+   
    //danos
    const danoCausado = dano[crimeSelecionado];
    const resistenciaAtual = getResistencia();
@@ -334,10 +334,13 @@ textoGang.innerHTML = mensagemFail;
      novaResistencia = 0;
      novaVida = vidaAtual - (danoCausado - resistenciaAtual);
    }
-   
-   atualizarVida(novaVida);
-   atualizarResistencia(novaResistencia);
- 
+
+    atualizarVida(novaVida);
+    atualizarResistencia(novaResistencia);
+  
+    localStorage.setItem("mercenarios", 0);
+    localStorage.setItem("poderM", 0);
+
   }else{
     textoGang.innerHTML= `<p>"Você não possui a quantiidade de mercenários necessários você precisa ter ${mercenariosNecessarios[crimeSelecionado]}"</p>`;
   }

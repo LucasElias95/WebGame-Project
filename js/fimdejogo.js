@@ -1,18 +1,10 @@
-var links = document.querySelectorAll(".link");
+window.addEventListener('beforeunload', function (event) {
+    event.preventDefault();
+    event.returnValue = 'Seu jogo acabou. Voltar à página anterior carregará um novo jogo sem dinheiro, vida e habilidades.';
+  });
 
-        // Função para bloquear a navegação entre páginas
-        function bloquearNavegacao(event) {
-            event.preventDefault();
-            alert("A navegação entre páginas está bloqueada.");
-        }
+  window.addEventListener('unload', function () {
+    // Limpa o localStorage
+    localStorage.clear();
 
-        // Adiciona um ouvinte de evento de clique para bloquear a navegação
-        for (var i = 0; i < links.length; i++) {
-            links[i].addEventListener("click", bloquearNavegacao);
-        }
-
-        // Impede o usuário de voltar para páginas bloqueadas usando o botão "Voltar" do navegador
-        window.addEventListener("popstate", function(event) {
-            alert("A navegação entre páginas está bloqueada.");
-            history.pushState(null, null, window.location.href);
-        });
+})

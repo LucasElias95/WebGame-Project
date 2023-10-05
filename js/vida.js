@@ -3,8 +3,8 @@ const botaoPublico = document.getElementById('publico');
 const botaoParticular = document.getElementById('particular');
 
 const curaVida = {
-    'publico': 5,
-    'particular': 10,
+    'publico': 10,
+    'particular': 40,
 };
 
 const custoVida = {

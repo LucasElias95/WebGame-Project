@@ -160,6 +160,7 @@ atualizarResistencia(getResistencia());
 atualizarInteligencia(getInteligencia()); // Passa o valor da inteligência do armazenamento local
 atualizarForca(getForca()); // Passa o valor da força do armazenamento local
 atualizarFire(getPoderFogo()); // Passa o valor da força do armazenamento local
+atualizarPoderMercenarios(getPoderMercenarios());
 
 });
 

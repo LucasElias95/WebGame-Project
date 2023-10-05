@@ -2,12 +2,12 @@ const botaoDaRua = document.getElementById('daRua');
 const botaoProfissional = document.getElementById('profissional');
 const botaoMilitar = document.getElementById('militar');
 const mercenariosElement = document.getElementById('mercenarios');
-const poderMercenariosElement = document.getElementById('poderMercenarios');
+const poderMElement = document.getElementById('poderM');
 
 const preços = {
-    'daRua': 100,
-    'profissional':200,
-    'militar':300,
+    'daRua': 300,
+    'profissional':500,
+    'militar':1000,
 };
 
 botaoDaRua.addEventListener('click', function () {
@@ -23,10 +23,10 @@ botaoDaRua.addEventListener('click', function () {
     const nMercenarios = mercenarios + 1;
     atualizarMercenarios(nMercenarios);
 
-    const poderMercenariosAtual = getPoderMercenarios();
-    const forçaDaRua = 100;
-    const novoPoderMercenarios = poderMercenariosAtual + forçaDaRua;
-    atualizarPoderMercenarios(novoPoderMercenarios);
+    const poderMAtual = getPoderM();
+    const forçaM = 100;
+    const novoPoderM = poderMAtual + forçaM;
+    atualizarPoderM(novoPoderM);
 
 ;
 
@@ -53,10 +53,10 @@ botaoProfissional.addEventListener('click', function () {
     const nMercenarios = mercenarios + 1
     atualizarMercenarios(nMercenarios)
     
-    const poderMercenariosAtual = getPoderMercenarios();
-    const forçaDaRua = 200;
-    const novoPoderMercenarios = poderMercenariosAtual + forçaDaRua;
-    atualizarPoderMercenarios(novoPoderMercenarios);
+    const poderMAtual = getPoderM();
+    const forçaM = 200;
+    const novoPoderM = poderMAtual + forçaM;
+    atualizarPoderM(novoPoderM);
 
 
     } else if (localStorage.getItem("dinheiro") < preços['profissional']){
@@ -81,10 +81,10 @@ botaoMilitar.addEventListener('click', function () {
     const nMercenarios = mercenarios + 1
     atualizarMercenarios(nMercenarios)
 
-    const poderMercenariosAtual = getPoderMercenarios();
-    const forçaDaRua = 300;
-    const novoPoderMercenarios = poderMercenariosAtual + forçaDaRua;
-    atualizarPoderMercenarios(novoPoderMercenarios);
+    const poderMAtual = getPoderM();
+    const forçaM = 300;
+    const novoPoderM = poderMAtual + forçaM;
+    atualizarPoderM(novoPoderM);
 
 
     } else if (localStorage.getItem("dinheiro") < preços['militar']){
@@ -97,4 +97,4 @@ botaoMilitar.addEventListener('click', function () {
 });
 
 atualizarMercenarios(nMercenarios);
-atualizarPoderMercenarios(novoPoderMercenarios);
+atualizarPoderM(novoPoderM);

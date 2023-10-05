@@ -8,6 +8,7 @@ const personagens = {
     anos: 25,
     força: 0,
     inteligencia: 20,
+    poderFogo: 0,
     dinheiro: 1000,
   },
 
@@ -23,7 +24,7 @@ const personagens = {
     força: 25,
     inteligencia: 5,
     poderFogo: 0,
-    dinheiro: 100,
+    dinheiro: 300,
   },
  
   jamal: {
@@ -31,6 +32,7 @@ const personagens = {
     força: 5,
     inteligencia: 0,
     poderFogo: 5,
+    dinheiro: 0,
   },
 };
 
@@ -135,7 +137,7 @@ function atualizarIdade(novaIdade) {
   const idadeElement = document.getElementById('idadeDisplay');
   idadeElement.textContent = novaIdade;
 }
-function atualizarAnos(novoAno) {
+/*function atualizarAnos(novoAno) {
   localStorage.setItem('anos', novoAno.toString());
   const anosElement = document.getElementById('anosDisplay');
   anosElement.textContent = novoAno;
@@ -144,7 +146,7 @@ function atualizarAnos(novoAno) {
   if (novoAno > 69) {
     window.location.href = "aposentou.html";
   }
-}
+}*/
 
 
 //Para transformar mesês em anos-----------------------------------------------------
@@ -187,7 +189,17 @@ function atualizarAnosNaPagina() {
   anosElement.textContent = anosAtual;
   }
 
-
+  function atualizarAnos(novoAno) {
+    localStorage.setItem('anos', novoAno.toString());
+    const anosElement = document.getElementById('anosDisplay');
+    anosElement.textContent = novoAno;
+  
+    // Verificar se o jogador se aposentou
+    if (novoAno > 69) {
+      window.location.href = "aposentou.html";
+    }
+  }
+  
 
 //-----------------------VIDA------------------------------------
 function getVida() {
@@ -230,13 +242,13 @@ function atualizarMercenarios(novoValor) {
   mercenariosElement.textContent = novoValor;
 }
 
-function getPoderMercenarios(){
-  const poderMercenarios = localStorage.getItem('poderMercenarios');
-  return poderMercenarios ? parseInt(poderMercenarios): 0;
+function getPoderM(){
+  const poderM = localStorage.getItem('poderM');
+  return poderM ? parseInt(poderM): 0;
 }
-  function atualizarPoderMercenarios(novoValor) {
-    localStorage.setItem('poderMercenarios', novoValor.toString());
-    poderMercenariosElement.textContent = novoValor;
+  function atualizarPoderM(novoValor) {
+    localStorage.setItem('poderM', novoValor.toString());
+    poderMElement.textContent = novoValor;
     
   }
 
@@ -292,7 +304,6 @@ function carregarJogo() {
 }
 
 
-
 //-----------------------ATUALIZAR------------------------------------
 window.addEventListener('load', function () {
   
@@ -306,7 +317,7 @@ window.addEventListener('load', function () {
   atualizarFire(getPoderFogo()); // Passa o valor da força do armazenamento local
   atualizarDinheiro(getDinheiro());
   atualizarMercenarios(getMercenarios());
-  atualizarPoderMercenarios(getPoderMercenarios());
-  
+  atualizarPoderM(getPoderM());
+  fimDeJogo();
   });
   
