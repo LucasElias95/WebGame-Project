@@ -1,5 +1,6 @@
 @charset "UTF-8"; 
 
+@media  (max-width: 1000px){
 
 @font-face {
     font-family: 'Sedgwick Ave Display';
@@ -26,9 +27,8 @@
 header{
     background-image: linear-gradient(to bottom, var(--cor1), var(--cor3));
     width: 100%;
-    padding-top: 40px;
-    min-height: 100px;
-    
+    padding-top: 5%;   
+    padding-bottom:5%;
 }
 
 header > h1{
@@ -64,7 +64,7 @@ header > h1{
         
         min-width: 25%;
         max-width: 100%;
-        height: 10%;
+        
         padding-top:1px;
         box-shadow: 4px 4px 9px 0px rgb(0, 0, 0, 0.315);
         }
@@ -104,7 +104,7 @@ header > h1{
         }
       
         div.target-container{
-            height: 159px;
+            height: 200px;
             width: 169px;
             padding-left:6%;
             }
@@ -114,14 +114,13 @@ header > h1{
             background-color: var(--cor1); opacity: 0.8;
             display: inline-block;
             text-align: center;
-            height: 190px;
-            width: 172px;
+          
             
             }
         
         img{
             margin-right:20px;
-            width:85%;
+            width:65%;
             padding-top: 10px;
             padding-left: 10px;
                      }
@@ -144,6 +143,7 @@ header > h1{
                         color: white; opacity: 0;
                     }
         p.display{
+            padding:5px;
             text-align: left;
             font-family: var(--fonte-destaque);
         }
@@ -158,17 +158,16 @@ header > h1{
         padding-left:0px;
         background-color: var(--cor1);
         opacity: 0.8;
-        width: 187px;
-        height: 535px;
-        float: left; /* Adicione esta propriedade para manter o nav à esquerda */
-    }
+        width: 43%;
+        height:750px;
+       }
         
     
         dd{
         width: 100%;
         padding-left: 5%;
-        padding-top: 25%;
-        height: 1px;
+        padding-top: 30%;
+        height: 1%;
          
      }
 
@@ -190,10 +189,10 @@ Página Estatisticas */
 
 div.estatisticas {
     position: absolute;
-    top: 30%;
-    left: 18%; 
-    width: 40%;
-    height: 50%;
+    top: 45%;
+    left: 46%; 
+    width: 50%;
+    height: 45%;
     background-color: var(--cor1);
     opacity: 0.8;
 }
@@ -204,35 +203,33 @@ div.estatisticas {
         padding-left: 10%;
         font-size:x-large
     }
-    h2.estatisticas{
-        font-size:xx-large
-    }
+
 
         /* -------------------------------------------
 Página Hospital*/
 
 div.hospitalPublico{
     text-align: center;
-    width: 30%;
+    width: 40%;
     height: 30%;
     background-color: var(--cor1);
     opacity: 0.8;
     position: absolute;
-    left: 200px;
-    top: 150px;
+    left: 46%;
+    top: 30%;
    }
 div.hospitalPublico:hover{
     background-color: var(--cor4);
 }           
 div.hospitalParticular{
 text-align: center;
-width: 30%;
+width: 40%;
 height: 30%;
 background-color: var(--cor1);
 opacity: 0.8;
 position: absolute;
-left: 200px;
-top: 350px;        
+left: 46%;
+top: 65%;        
 }
 div.hospitalParticular:hover{
 background-color: var(--cor4);
@@ -254,8 +251,6 @@ position: absolute;
 height: 16%;
 
 }
-
-
     /* -------------------------------------------
 Página Cometer crimes */
 
@@ -547,12 +542,14 @@ input.equipamentos{
             opacity: 0.5;
             color: #070707;
         }
+
+/*Página mercenarios*/
 /*Página mercenarios*/
 
 
 div.caraRua{
     text-align: center;
-    width: 38%;
+    width: 40%;
     height: 15%;
     background-color: var(--cor1);
     opacity: 0.8;
@@ -566,7 +563,7 @@ div.caraRua:hover{
 }           
 div.bandido{
     text-align: center;
-    width: 38%;
+    width: 40%;
     height: 15%;
     background-color: var(--cor1);
     opacity: 0.8;
@@ -579,7 +576,7 @@ background-color: var(--cor4);
 }
 div.militar{
     text-align: center;
-    width: 38%;
+    width: 40%;
     height: 15%;
     background-color: var(--cor1);
     opacity: 0.8;
@@ -594,34 +591,41 @@ background-color: var(--cor4);
 }
 
 h3.mercenarios{
-    margin-top: -15%;
+    margin-left: 30%;
+    margin-top: -25%;
+    font-size:10px;
 }
 
 img.mercenarios{
-    margin-left: -60%;
-    width: 17%;
+    margin-top: 1%;
+    margin-left: -55%;
+    width: 30%;
+    height:50%
 }
 p.mercenarios{
+    margin-left:30%;
         font-size: small;
         margin-top: 1%;
         color: var(--cor0);
 }
 
 input.mercenarios{
-        margin-top: 1%;
-        width: 30%;
-        left: 40%;
+        margin-top: 10%;
+        width: 60%;
+        left: 25%;
         position: absolute;
-}  
+}
+
     /* -------------------------------------------
 FOOTER */
 
 footer {
-    clear: both; /* Adicione esta propriedade */
-    padding-top: 20px;
+    margin-top:10%;
+    padding-top:5%;
     background-color: #070707;
     color: white;
     text-align: center;
     font-size: 1em;
-    height: 70px;
+    height: 10%;
+}
 }

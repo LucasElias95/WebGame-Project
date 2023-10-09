@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gangue</title>
+    <title>Mercenários</title>
     <link rel="stylesheet" href="estilo/style.css">
-    <link rel="stylesheet" href="estilo/midia-query.css" media="screen and (max-device-width: 1183px)" />
+    <link rel="stylesheet" href="estilo/estiloCelular.css" />
 </head>
 
 <body>
     <header>
-        <h1>Gangue</h1>
+        <h1>Mercenários</h1>
         <p>Aqui você pode contratar mercenários para te ajudar em crimes de gang.</p>
     </header>
     <nav>    
@@ -30,33 +30,40 @@
         </dl>
            </nav>
            <section id="mercenarios">
-         
-        <div class="sozinho">
-                <h3>Cara da rua</h3>
+        </nav>
+
+        <div class="caraRua">
+            <img class="mercenarios" src="cidade/caraRua.jpeg" alt="">
+                <h3 class="mercenarios">Cara da rua</h3>
            
-            <p class="academia">Preço: R$300</p>
-            <input class="academia" id="daRua" type="submit" value="CONTRATAR" />
+            <p class="mercenarios">Preço: R$300</p>
+            <input class="mercenarios" id="daRua" type="submit" value="CONTRATAR" />
             </div>
 
-        <div class="treinoAcademia">
-                <h3>Bandido Profissional</h3>
+        <div class="bandido">
+            <img class="mercenarios" src="cidade/bandido.jpeg" alt="">
+                <h3 class="mercenarios">Bandido Profissional</h3>
              
-             <p class="academia">Preço: $500</p>
-             <input class="academia" id="profissional" type="submit" value="CONTRATAR" />
+             <p class="mercenarios">Preço: $500</p>
+             <input class="mercenarios" id="profissional" type="submit" value="CONTRATAR" />
             </div>
 
-        <div class="treinoArtesMarciais">
-                <h3>Ex Militar</h3>
+        <div class="militar">
+            <img class="mercenarios" src="cidade/militar (1).jpeg" alt="">
+                <h3 class="mercenarios">Ex Militar</h3>
                 
-                <p class="academia">  Preço:$1000  </p>
-                <input class="academia" id="militar" type="submit" value="CONTRATAR" />
+                <p class="mercenarios">  Preço:$1000  </p>
+                <input class="mercenarios" id="militar" type="submit" value="CONTRATAR" />
             </div>
            </section>
            <footer>
             <p>Desenvolvido por Lucas Elias</p>
         </footer>
 </body>
-<script src="js/mercenarios.js"></script>
+
 <script src="js/main.js"></script>
+<script src="js/mercenarios.js"></script>
+
+
 
 </html>

@@ -9,8 +9,19 @@ const preços = {
     'profissional':500,
     'militar':1000,
 };
+function getMercenarios() {
+    const mercenarios = localStorage.getItem('mercenarios');
+    return mercenarios ? parseInt(mercenarios) : 0;
+  }
+  
+  // Função para atualizar o valor da força na página e no armazenamento local
+  function atualizarMercenarios(novoValor) {
+    localStorage.setItem('mercenarios', novoValor.toString());
+    mercenariosElement.textContent = novoValor;
+  }
 
 botaoDaRua.addEventListener('click', function () {
+   
     if (localStorage.getItem("dinheiro") >= preços['daRua'] && localStorage.getItem("mercenarios") < 3) {
      
     // Diminuir o dinheiro
@@ -27,8 +38,7 @@ botaoDaRua.addEventListener('click', function () {
     const forçaM = 100;
     const novoPoderM = poderMAtual + forçaM;
     atualizarPoderM(novoPoderM);
-
-;
+      
 
     } else if (localStorage.getItem("dinheiro") < preços['daRua']){
         
@@ -96,5 +106,11 @@ botaoMilitar.addEventListener('click', function () {
     }
 });
 
+// Verifique a força atual e defina-a se for a primeira vez
+if (localStorage.getItem('mercenarios') === 0) {
+    localStorage.setItem('mercenarios', '0');
+}
+
 atualizarMercenarios(nMercenarios);
 atualizarPoderM(novoPoderM);
+

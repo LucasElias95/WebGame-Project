@@ -236,11 +236,17 @@ function getMercenarios() {
   return mercenarios ? parseInt(mercenarios) : 0;
 }
 
-// Função para atualizar o valor da força na página e no armazenamento local
+
+// Função para atualizar o valor de mercenários na página e no armazenamento local
 function atualizarMercenarios(novoValor) {
   localStorage.setItem('mercenarios', novoValor.toString());
+  const mercenariosElement = document.getElementById('mercenarios'); // Adicione essa linha para obter a referência correta ao elemento HTML
   mercenariosElement.textContent = novoValor;
 }
+
+
+
+
 
 function getPoderM(){
   const poderM = localStorage.getItem('poderM');
