@@ -159,15 +159,15 @@ header > h1{
         background-color: var(--cor1);
         opacity: 0.8;
         width: 45%;
-        height:630px;
+        height:90%;
        }
         
     
         dd{
         width: 100%;
         padding-left: 5%;
-        padding-top: 30%;
-        
+        padding-top: 10%;
+        padding-bottom:12%;
          
      }
 
@@ -216,7 +216,7 @@ div.hospitalPublico{
     opacity: 0.8;
     position: absolute;
     left: 46%;
-    top: 30%;
+    top: 25%;
    }
 div.hospitalPublico:hover{
     background-color: var(--cor4);
@@ -229,7 +229,7 @@ background-color: var(--cor1);
 opacity: 0.8;
 position: absolute;
 left: 46%;
-top: 65%;        
+top: 60%;        
 }
 div.hospitalParticular:hover{
 background-color: var(--cor4);
@@ -419,7 +419,7 @@ div.sozinho{
             opacity: 0.8;
             position: absolute;
             left: 200px;
-            top: 46%;
+            top: 40%;
    }
 
 div.sozinho:hover{
@@ -433,7 +433,7 @@ div.treinoAcademia{
     opacity: 0.8;
     position: absolute;
     left: 200px;
-    top: 63%;        
+    top: 58%;        
 }
 div.treinoAcademia:hover{
 background-color: var(--cor4);
@@ -446,7 +446,7 @@ div.treinoArtesMarciais{
     opacity: 0.8;
     position: absolute;
     left: 200px;
-    top: 80%;
+    top: 76%;
   
 }
 
@@ -503,35 +503,33 @@ input.equipamentos{
 }
 
 /*-------------------------------LUTAS CLANDESTINAS*/
-
- 
  
 table {
     width: 53%;
     
-      
 }
 
 div.lutas{
     background-color: var(--cor4);
-    width: 90%;
-    margin-left: 15%;
+    width: 53%;
+    margin-left: 45%;
     margin-top: 1%;
 }
 
 h1.lutas {
     background-color: var(4);
     width: 100%;
-    font-size:20px;
+    font-size:15px;
     margin-left: 25%;
 }
+
 table, th, td {
     border: 1px solid black;
 }
 
 th, td {
     
-    font-size:8px;
+    font-size:6px;
     text-align: left;
 }
 
@@ -541,28 +539,24 @@ tr {
 }
 td{
     
-    width:15%;
+    width:12%;
     background-color: var(--cor1);
     opacity: 0.5;
-    color: #070707;
+    color:#070707;
 }
 input.lutas{
-    margin-left:60%;
-    margin-top:-8px;
-    width:12%;
-    height:2%;
-    font-size:small;
+    margin-left:63%;
+    width:8%;
+    font-size:7px;
     
     
 }
 p.lutas{
-    font-size: 10px;
+    font-size: 8px;
 }
 
+
 /*Página mercenarios*/
-
-
-
 div.caraRua{
     text-align: center;
     width: 40%;
@@ -571,7 +565,7 @@ div.caraRua{
     opacity: 0.8;
     position: absolute;
     left: 200px;
-    top: 46%;
+    top: 30%;
    }
 
 div.caraRua:hover{
@@ -585,7 +579,7 @@ div.bandido{
     opacity: 0.8;
     position: absolute;
     left: 200px;
-    top: 63%;        
+    top: 50%;        
 }
 div.bandido:hover{
 background-color: var(--cor4);
@@ -598,7 +592,7 @@ div.militar{
     opacity: 0.8;
     position: absolute;
     left: 200px;
-    top: 80%;
+    top: 70%;
   
 }
 
@@ -642,6 +636,5 @@ footer {
     color: white;
     text-align: center;
     font-size: 1em;
-    height: 10%;
 }
 }

@@ -520,13 +520,14 @@ input.equipamentos{
             background-color: var(--cor4);
             width: 45%;
             margin-left: 15%;
-            margin-top: 10%;
+            margin-top: 1%;
+            border: 1px solid black;
         }
 
         h1.lutas {
             background-color: var(4);
             width: 100%;
-            margin-left: 12%;
+            margin-left: 27%;
         }
         table, th, td {
             border: 1px solid black;
