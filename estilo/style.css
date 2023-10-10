@@ -510,7 +510,7 @@ input.equipamentos{
 /*-------------------------------LUTAS CLANDESTINAS*/
 
         table {
-            width: 40%;
+            width: 45%;
             border-collapse: collapse;
             margin-left: 15%;
               
@@ -518,15 +518,15 @@ input.equipamentos{
 
         div.lutas{
             background-color: var(--cor4);
-            width: 40%;
+            width: 45%;
             margin-left: 15%;
-            margin-top: 1%;
+            margin-top: 10%;
         }
 
         h1.lutas {
             background-color: var(4);
             width: 100%;
-            margin-left: 25%;
+            margin-left: 12%;
         }
         table, th, td {
             border: 1px solid black;
@@ -543,10 +543,30 @@ input.equipamentos{
             
         }
         td{
-            background-color: var(--cor1);
-            opacity: 0.5;
+            padding: 1%;
+            width: 29%;
+            background-color: var(--cor4);
+            opacity: 0.8;
             color: #070707;
         }
+
+        input.lutas{
+            
+                width: 4%;
+                margin-left: 29%;
+                margin-top: -0.5%;
+                background-color: var(--cor4);
+            
+        }
+        input.lutas:hover{
+            background-color: yellow;
+        }
+        
+        p.lutas{
+            font-size: small;
+        }
+
+       
 /*Página mercenarios*/
 
 
