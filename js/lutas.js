@@ -4,6 +4,9 @@ const botaoBoca = document.getElementById('boca');
 const botaoZe = document.getElementById('ze');
 const botaoPablo = document.getElementById('pablo');
 const botaoPedro = document.getElementById('pedro');
+const botaoChrissi = document.getElementById('chrissi');
+const botaoPaulo = document.getElementById('paulo');
+const botaoAnderson = document.getElementById('anderson');
 
 const textoLutasChico = document.getElementById('chicoLutas');
 const textoLutasTonhao = document.getElementById('tonhaoLutas');
@@ -11,6 +14,9 @@ const textoLutasBoca = document.getElementById('bocaLutas');
 const textoLutasZe = document.getElementById('zeLutas');
 const textoLutasPablo = document.getElementById('pabloLutas');
 const textoLutasPedro = document.getElementById('pedroLutas');
+const textoLutasChrissi = document.getElementById('chrissiLutas');
+const textoLutasPaulo = document.getElementById('pauloLutas');
+const textoLutasAnderson = document.getElementById('andersonLutas');
 
 let lutaVencidaChico = localStorage.getItem('chicoLutaVencida');
 let lutaVencidaTonhao = localStorage.getItem('tonhaoLutaVencida');
@@ -18,6 +24,9 @@ let lutaVencidaBoca = localStorage.getItem('bocaLutaVencida');
 let lutaVencidaZe = localStorage.getItem('zeLutaVencida');
 let lutaVencidaPablo = localStorage.getItem('pabloLutaVencida');
 let lutaVencidaPedro = localStorage.getItem('pedroLutaVencida');
+let lutaVencidaChrissi = localStorage.getItem('chrissiLutaVencida');
+let lutaVencidaPaulo = localStorage.getItem('pauloLutaVencida');
+let lutaVencidaAnderson = localStorage.getItem('andersonLutaVencida');
 
 if (lutaVencidaChico === 'true') {
     botaoChico.disabled = true;
@@ -48,6 +57,21 @@ if (lutaVencidaPedro === 'true') {
     botaoPedro.disabled = true;
     textoLutasPedro.innerHTML = 'Vencido';
     textoLutasPedro.style.color = 'green';
+}
+if (lutaVencidaChrissi === 'true') {
+    botaoChrissi.disabled = true;
+    textoLutasChrissi.innerHTML = 'Vencido';
+    textoLutasChrissi.style.color = 'green';
+}
+if (lutaVencidaPaulo === 'true') {
+    botaoPaulo.disabled = true;
+    textoLutasPaulo.innerHTML = 'Vencido';
+    textoLutasPaulo.style.color = 'green';
+}
+if (lutaVencidaAnderson === 'true') {
+    botaoAnderson.disabled = true;
+    textoLutasAnderson.innerHTML = 'Vencido';
+    textoLutasAnderson.style.color = 'green';
 }
 
 const dificuldade = {
@@ -286,6 +310,105 @@ botaoPedro.addEventListener('click', function () {
             atualizarVida(novaVida);
             textoLutasPedro.innerHTML = 'Pedro fez picadinho de você';
             textoLutasPedro.style.color = 'red';
+        }
+    }
+})
+
+botaoChrissi.addEventListener('click', function () {
+    if (!lutaVencidaChrissi) { 
+        const adversario = dificuldade['chrissi'];
+        const poderDeLuta = poderLuta();
+
+        if (poderDeLuta > adversario) {
+            const valorDoPremio = premio['chrissi'];
+            const dinheiroAtual = getDinheiro();
+            const novoDinheiro = dinheiroAtual + valorDoPremio;
+            atualizarDinheiro(novoDinheiro);
+
+            const danoSofrido = dano['chrissi'];
+            const vida = getVida();
+            const novaVida = vida - danoSofrido;
+            atualizarVida(novaVida);
+
+            textoLutasChrissi.innerHTML = 'Vencido';
+            textoLutasChrissi.style.color = 'green';
+            botaoChrissi.disabled = true;
+            lutaVencidaChrissi = true;
+            localStorage.setItem('chrissiLutaVencida', 'true');
+
+        } else {
+            const danoSofrido = dano['chrissi'];
+            const vida = getVida();
+            const novaVida = vida - danoSofrido;
+            atualizarVida(novaVida);
+            textoLutasChrissi.innerHTML = 'Chrissi te deu um cruzado que lhe derrubou como um tiro certeiro';
+            textoLutasChrissi.style.color = 'red';
+        }
+    }
+})
+
+botaoPaulo.addEventListener('click', function () {
+    if (!lutaVencidaPaulo) { 
+        const adversario = dificuldade['paulo'];
+        const poderDeLuta = poderLuta();
+
+        if (poderDeLuta > adversario) {
+            const valorDoPremio = premio['paulo'];
+            const dinheiroAtual = getDinheiro();
+            const novoDinheiro = dinheiroAtual + valorDoPremio;
+            atualizarDinheiro(novoDinheiro);
+
+            const danoSofrido = dano['paulo'];
+            const vida = getVida();
+            const novaVida = vida - danoSofrido;
+            atualizarVida(novaVida);
+
+            textoLutasPaulo.innerHTML = 'Vencido';
+            textoLutasPaulo.style.color = 'green';
+            botaoPaulo.disabled = true;
+            lutaVencidaPaulo = true;
+            localStorage.setItem('pauloLutaVencida', 'true');
+
+        } else {
+            const danoSofrido = dano['paulo'];
+            const vida = getVida();
+            const novaVida = vida - danoSofrido;
+            atualizarVida(novaVida);
+            textoLutasPaulo.innerHTML = 'Não vou nem te dizer onde o Paulo colocou a calabresa';
+            textoLutasPaulo.style.color = 'red';
+        }
+    }
+})
+
+botaoAnderson.addEventListener('click', function () {
+    if (!lutaVencidaAnderson) { 
+        const adversario = dificuldade['anderson'];
+        const poderDeLuta = poderLuta();
+
+        if (poderDeLuta > adversario) {
+            const valorDoPremio = premio['anderson'];
+            const dinheiroAtual = getDinheiro();
+            const novoDinheiro = dinheiroAtual + valorDoPremio;
+            atualizarDinheiro(novoDinheiro);
+
+            const danoSofrido = dano['anderson'];
+            const vida = getVida();
+            const novaVida = vida - danoSofrido;
+            atualizarVida(novaVida);
+
+            textoLutasAnderson.innerHTML = 'Vencido';
+            textoLutasAnderson.style.color = 'green';
+            botaoAnderson.disabled = true;
+            lutaVencidaAnderson = true;
+            localStorage.setItem('andersonLutaVencida', 'true');
+
+        } else {
+            const danoSofrido = dano['paulo'];
+            const vida = getVida();
+            const novaVida = vida - danoSofrido;
+            atualizarVida(novaVida);
+            textoLutasAnderson.innerHTML = 'Parece que essa perna era mais dura do que o que você imaginava, não subestime um campeão';
+            textoLutasAnderson.style.color = 'red';
         }
     }
 });
