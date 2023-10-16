@@ -16,6 +16,15 @@ const tempoCrime ={
   'banco': 6,
 }
 
+function toggleDescription(button) {
+  var descricao = button.nextElementSibling;
+  if (descricao.style.display === "none") {
+    descricao.style.display = "block";
+  } else {
+    descricao.style.display = "none";
+  }
+}
+
     function calcularPoderPersonagem() {
       const forca = getForca(); 
       const inteligencia = getInteligencia(); 
@@ -40,11 +49,11 @@ document.querySelector('.crimes form').addEventListener('submit', function (e) {
 
   const valoresDosCrimes = {
     'none': 0,
-    'rua': Math.floor(Math.random() * 40) + 10,
-    'casa': Math.floor(Math.random() * 200) + 100,
-    'conveniencia': Math.floor(Math.random() * 100) + 400,
-    'carro': Math.floor(Math.random() * 200) + 600,
-    'superMercado': Math.floor(Math.random()* 300) + 900
+    'rua': Math.floor(Math.random() * 70) + 30,
+    'casa': Math.floor(Math.random() * 200) + 150,
+    'conveniencia': Math.floor(Math.random() * 200) + 400,
+    'carro': Math.floor(Math.random() * 300) + 600,
+    'superMercado': Math.floor(Math.random()* 300) + 1000
   };
 
   const dano = {
@@ -57,7 +66,7 @@ document.querySelector('.crimes form').addEventListener('submit', function (e) {
   }
   
   const dificuldade = {
-    'rua': 20 + Math.floor(Math.random() * 15),
+    'rua': 5 + Math.floor(Math.random() * 5),
     'casa': 50 + Math.floor(Math.random() * 20),
     'conveniencia': 90 + Math.floor(Math.random() * 20),
     'carro': 130 + Math.floor(Math.random() * 30),
@@ -199,11 +208,11 @@ document.querySelector('.crimesGangue form').addEventListener('submit', function
   
   const valoresDosCrimes = {
     'none': 0,
-    'caixa': Math.floor(Math.random() * 2000) + 1000,
-    'consecionaria': Math.floor(Math.random() * 5000) + 2000,
-    'carroForte': Math.floor(Math.random() * 8000) + 5000,
-    'joalheria': Math.floor(Math.random() * 20000) + 6000,
-    'banco': Math.floor(Math.random() * 50000) + 10000,
+    'caixa': Math.floor(Math.random() * 1000) + 3000,
+    'consecionaria': Math.floor(Math.random() * 2000) + 5000,
+    'carroForte': Math.floor(Math.random() * 5000) + 8000,
+    'joalheria': Math.floor(Math.random() * 10000) + 2000,
+    'banco': Math.floor(Math.random() * 20000) + 50000,
   };
  
  const dano = {
@@ -219,8 +228,8 @@ document.querySelector('.crimesGangue form').addEventListener('submit', function
     'caixa': 400 + Math.floor(Math.random() * 100),
     'consecionaria': 600 + Math.floor(Math.random() * 100),
     'carroForte': 800 + Math.floor(Math.random() * 200),
-    'joalheria': 1500 + Math.floor(Math.random() * 200),
-    'banco': 2500 + Math.floor(Math.random() * 500),
+    'joalheria': 1200 + Math.floor(Math.random() * 200),
+    'banco': 1700 + Math.floor(Math.random() * 300),
   };
 
   if (poderPersonagemAtual + poderM > dificuldade[crimeSelecionado] && localStorage.getItem("mercenarios") >= mercenariosNecessarios[crimeSelecionado]){

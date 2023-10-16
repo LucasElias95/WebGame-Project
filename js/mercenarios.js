@@ -17,9 +17,10 @@ function getMercenarios() {
   // Função para atualizar o valor da força na página e no armazenamento local
   function atualizarMercenarios(novoValor) {
     localStorage.setItem('mercenarios', novoValor.toString());
-    mercenariosElement.textContent = novoValor;
+    const mercenarios = document.getElementById('mercenarios');
+    mercenarios.textContent = novoValor;
   }
-
+  
 botaoDaRua.addEventListener('click', function () {
    
     if (localStorage.getItem("dinheiro") >= preços['daRua'] && localStorage.getItem("mercenarios") < 3) {
@@ -110,7 +111,3 @@ botaoMilitar.addEventListener('click', function () {
 if (localStorage.getItem('mercenarios') === 0) {
     localStorage.setItem('mercenarios', '0');
 }
-
-atualizarMercenarios(nMercenarios);
-atualizarPoderM(novoPoderM);
-

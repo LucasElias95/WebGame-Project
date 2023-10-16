@@ -181,6 +181,12 @@ header > h1{
         padding-left: 10%;
     }
 
+    p.how{
+        font-family: var(--fonte-padrao);
+        color: var(--cor0);
+        text-decoration: none;
+    }
+
     footer{
         padding-top:20px;
         background-color: #070707;

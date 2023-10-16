@@ -319,6 +319,7 @@ Página Cometer crimes */
         text-align: center;
     }
 
+  
     /* -------------------------------------------
 Página Escola */
     div.inteligencia{
@@ -572,7 +573,16 @@ input.equipamentos{
 
        
 /*Página mercenarios*/
-
+div.mercenarios{
+    text-align: center;
+    width: 38%;
+    height: 15%;
+    background-color: var(--cor4);
+    opacity: 0.8;
+    position: absolute;
+    left: 200px;
+    margin-top: 1%;
+}
 
 div.caraRua{
     text-align: center;
