@@ -1,0 +1,95 @@
+@charset "UTF-8"; 
+
+
+@font-face {
+    font-family: 'Sedgwick Ave Display';
+    src: url(fontes/SedgwickAveDisplay-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;}
+
+:root{
+    --cor0: #f5faf7;
+    --cor1: #979393;
+    --cor2: #e71111;
+    --cor3: #070707;
+    --cor4: #c0b184;
+
+    --fonte-padrao: arial, verdana, helvetica, sans-serif;
+    --fonte-destaque:'Sedgwick Ave Display', cursive;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+    background-image: linear-gradient(to bottom, var(--cor1), var(--cor3));
+    width: 100%;
+    padding-top: 40px;
+    min-height: 150px;
+    
+}
+
+header > h1{
+    font-family: var(--fonte-destaque);
+    color: var(--cor4);
+    text-align: center;
+    font-weight: normal;
+    font-size: 3em;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.73);}
+
+    header > P{
+        text-align: center;
+        font-family: var(--fonte-padrao);
+        font-size: 1em;
+        color: white;
+        max-width: 920px;
+        margin: auto;
+        padding-right: 15px;
+        padding-left: 20px;
+        text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.373);
+    }
+    h2{
+        text-align: left;
+        margin: 1%;
+    }
+
+    body{
+        background-color: var(--cor1);
+        opacity: 0.9;
+    }
+    main{
+        background-image: url(artes/city2.jfif);
+        margin-left: 5%;
+        margin-right: 5%;
+        padding: 45%;
+        padding-top: 45%;
+        box-shadow: 4px 4px 9px 0px rgb(0, 0, 0, 0.315);
+        }
+
+   p{
+    margin: 1%;
+   }
+
+    div {
+        margin-left: 20%;
+        text-align: center;
+        width: 50%;
+        background-color: var(--cor0);
+        opacity: 0.9;
+        position: absolute;
+        left: 7%;
+        top: 33%;
+    }
+
+
+    footer {
+        padding-bottom: 2%;
+        clear: both;
+        padding-top: 2%;
+        background-color: #070707;
+        color: white;
+        text-align: center;
+        font-size: 1em;
+    }
