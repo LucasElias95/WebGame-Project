@@ -1,4 +1,6 @@
 # WebGame-Project
- Desenvolvimento um jogo baseado de um unico jogador, com linguagem HTML, CSS e JavaScript para treinar minha lógica de programação
+ Desenvolvimento de um jogo para unico jogador, com linguagem HTML, CSS e JavaScript para treinar minha lógica de programação.
+
+ Jogo não está pronto, mas está 100% jogavel
 
  Link disponivel do jogo (ainda em desenvolvimento) https://umavida.vercel.app/
