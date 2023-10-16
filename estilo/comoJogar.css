@@ -44,13 +44,14 @@ header > h1{
         font-family: var(--fonte-padrao);
         font-size: 1em;
         color: white;
-        max-width: 920px;
+        max-width: 1140px;
         margin: auto;
         padding-right: 15px;
         padding-left: 20px;
         text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.373);
     }
     h2.CJ{
+        font-family: var(--fonte-destaque);
         text-align: left;
         margin: 1%;
     }

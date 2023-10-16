@@ -211,7 +211,7 @@ document.querySelector('.crimesGangue form').addEventListener('submit', function
     'caixa': Math.floor(Math.random() * 1000) + 3000,
     'consecionaria': Math.floor(Math.random() * 2000) + 5000,
     'carroForte': Math.floor(Math.random() * 5000) + 8000,
-    'joalheria': Math.floor(Math.random() * 10000) + 2000,
+    'joalheria': Math.floor(Math.random() * 8000) + 12000,
     'banco': Math.floor(Math.random() * 20000) + 50000,
   };
  

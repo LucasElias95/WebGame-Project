@@ -185,6 +185,7 @@ header > h1{
         font-family: var(--fonte-padrao);
         color: var(--cor0);
         text-decoration: none;
+        margin-left: 3%;
     }
 
     footer{

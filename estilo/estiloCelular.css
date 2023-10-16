@@ -1,6 +1,6 @@
 @charset "UTF-8"; 
 
-@media  (max-width: 1000px){
+@media  (max-width: 900px){
 
 @font-face {
     font-family: 'Sedgwick Ave Display';
@@ -57,9 +57,6 @@ header > h1{
 
     
 
-    body{
-        background-image: url(artes/city2.jfif);
-    }
     main{
         
         min-width: 25%;
@@ -92,6 +89,17 @@ header > h1{
             font-family: var(--fonte-destaque);
             text-align: center;
         }
+
+        h3.fimdejogo{
+            opacity: 0.9;
+            background-color: var(--cor1);
+            margin-left: 25%;
+            color: var(--cor3);
+            max-width: 50%;
+            font-family: var(--fonte-destaque);
+            text-align: center;
+        }
+
 
         div.textoFimDeJogo{
             opacity: 0.9;
