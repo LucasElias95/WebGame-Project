@@ -63,13 +63,13 @@ header > h1{
     main{
         
         min-width: 25%;
-        max-width: 100%;
-        
+        max-width: 100%;        
         padding-top:1px;
         box-shadow: 4px 4px 9px 0px rgb(0, 0, 0, 0.315);
         }
+
         h1.fimdejogo{
-            opacity: 0.8;
+            opacity: 0.9;
             background-color: var(--cor1);
             margin-left: 25%;
             margin-top: 10%;
@@ -84,7 +84,7 @@ header > h1{
             text-align: center ;
         }
         h2.fimdejogo{
-            opacity: 0.8;
+            opacity: 0.9;
             background-color: var(--cor1);
             margin-left: 25%;
             color: var(--cor3);
@@ -94,7 +94,7 @@ header > h1{
         }
 
         div.textoFimDeJogo{
-            opacity: 0.8;
+            opacity: 0.9;
             background-color: var(--cor1);
             margin-left: 25%;
             color: var(--cor3);
@@ -157,7 +157,7 @@ header > h1{
         nav {
         padding-left:0px;
         background-color: var(--cor1);
-        opacity: 0.8;
+        opacity: 0.9;
         width: 45%;
         height: 500px;
        }
@@ -194,7 +194,9 @@ div.estatisticas {
     width: 50%;
     height: 42%;
     background-color: var(--cor1);
-    opacity: 0.8;
+    opacity: 0.9;
+    box-shadow: 2px 3px 10px;
+
 }
     p.estatisticas{
         text-align: left;
@@ -211,11 +213,13 @@ div.hospitalPublico{
     width: 40%;
     height: 20%;
     background-color: var(--cor1);
-    opacity: 0.8;
+    opacity: 0.9;
     position: absolute;
     left: 46%;
     top: 30%;
+    box-shadow: 2px 3px 10px;
    }
+
 div.hospitalPublico:hover{
     background-color: var(--cor4);
 }           
@@ -224,11 +228,13 @@ text-align: center;
 width: 40%;
 height: 20%;
 background-color: var(--cor1);
-opacity: 0.8;
+opacity: 0.9;
 position: absolute;
 left: 46%;
 top: 55%;        
+box-shadow: 2px 3px 10px;
 }
+
 div.hospitalParticular:hover{
 background-color: var(--cor4);
 }
@@ -259,7 +265,8 @@ Página Cometer crimes */
         width: 41%;
         height: 23%;
         background-color: var(--cor1);
-        opacity: 0.8;
+        opacity: 0.9;
+        box-shadow: 2px 3px 10px;
     }
 
     select {
@@ -292,7 +299,8 @@ Página Cometer crimes */
         width: 41%;
         height: 23%;
         background-color: var(--cor1);
-        opacity: 0.8;
+        opacity: 0.9;
+        box-shadow: 2px 3px 10px;
     }
 
     select.gangue {
@@ -321,20 +329,22 @@ div.inteligencia{
     width: 48%;
     height: 10%;
     background-color: var(--cor4);
-    opacity: 0.8;
+    opacity: 0.9;
     position: absolute;
     left: 46%;
     margin-top: 1%;
+    box-shadow: 2px 3px 10px;
 }
 div.estudar{
         text-align: center;
         width: 48%;
         height: 10%;
         background-color: var(--cor1);
-        opacity: 0.8;
+        opacity: 0.9;
         position: absolute;
         left: 46%;
         top: 42%;
+        box-shadow: 2px 3px 10px;
        }
 div.estudar:hover{
         background-color: var(--cor4);
@@ -344,10 +354,11 @@ div.escola{
     width: 48%;
     height: 10%;
     background-color: var(--cor1);
-    opacity: 0.8;
+    opacity: 0.9;
     position: absolute;
     left: 46%;
     top: 57%;        
+    box-shadow: 2px 3px 10px;
 }
 div.escola:hover{
 background-color: var(--cor4);
@@ -357,10 +368,11 @@ div.particular{
         width: 48%;
         height: 10%;
         background-color: var(--cor1);
-        opacity: 0.8;
+        opacity: 0.9;
         position: absolute;
         left: 46%;
         top: 71%;
+        box-shadow: 2px 3px 10px;
       
 }
 
@@ -407,10 +419,11 @@ div.força{
     width: 48%;
     height: 8%;
     background-color: var(--cor4);
-    opacity: 0.8;
+    opacity: 0.9;
     position: absolute;
     left: 46%;
     margin-top: 1%;
+    box-shadow: 2px 3px 10px;
 }
 
 div.sozinho{
@@ -418,10 +431,11 @@ div.sozinho{
     width: 48%;
     height: 10%;
     background-color: var(--cor1);
-    opacity: 0.8;
+    opacity: 0.9;
     position: absolute;
     left: 46%;
     top: 38%;
+    box-shadow: 2px 3px 10px;
    }
 
 div.sozinho:hover{
@@ -432,10 +446,11 @@ div.treinoAcademia{
     width: 48%;
     height: 10%;
     background-color: var(--cor1);
-    opacity: 0.8;
+    opacity: 0.9;
     position: absolute;
     left: 46%;
     top: 50%;        
+    box-shadow: 2px 3px 10px;
 }
 div.treinoAcademia:hover{
 background-color: var(--cor4);
@@ -445,11 +460,11 @@ div.treinoArtesMarciais{
     width: 48%;
     height: 10%;
     background-color: var(--cor1);
-    opacity: 0.8;
+    opacity: 0.9;
     position: absolute;
     left: 46%;
     top: 62%;
-  
+    box-shadow: 2px 3px 10px;
 }
 
 div.treinoArtesMarciais:hover{
@@ -480,7 +495,8 @@ div.armas{
     width: 40%;
     height: 20%;
     background-color: var(--cor1);
-    opacity: 0.8;
+    opacity: 0.9;
+    box-shadow: 2px 3px 10px;
 }
 
 div.equipamentos{
@@ -490,7 +506,8 @@ div.equipamentos{
     width: 40%;
     height: 20%;
     background-color: var(--cor1);
-    opacity: 0.8;
+    opacity: 0.9;
+    box-shadow: 2px 3px 10px;
 }
 
 select.equipamentos {
@@ -561,15 +578,28 @@ p.lutas{
 
 
 /*Página mercenarios*/
+div.mercenarios{
+    text-align: center;
+    width: 48%;
+    height: 8%;
+    background-color: var(--cor4);
+    opacity: 0.9;
+    position: absolute;
+    left: 46%;
+    margin-top: 1%;
+    box-shadow: 2px 3px 10px;
+}
+
 div.caraRua{
     text-align: center;
     width: 40%;
-    height: 15%;
+    height: 13%;
     background-color: var(--cor1);
-    opacity: 0.8;
+    opacity: 0.9;
     position: absolute;
     left: 46%;
-    top: 25%;
+    top: 33%;
+    box-shadow: 2px 3px 10px;
    }
 
 div.caraRua:hover{
@@ -578,12 +608,13 @@ div.caraRua:hover{
 div.bandido{
     text-align: center;
     width: 40%;
-    height: 15%;
+    height: 13%;
     background-color: var(--cor1);
-    opacity: 0.8;
+    opacity: 0.9;
     position: absolute;
     left: 46%;
-    top: 42%;        
+    top: 48%;  
+    box-shadow: 2px 3px 10px;      
 }
 div.bandido:hover{
 background-color: var(--cor4);
@@ -591,13 +622,13 @@ background-color: var(--cor4);
 div.militar{
     text-align: center;
     width: 40%;
-    height: 15%;
+    height: 13%;
     background-color: var(--cor1);
-    opacity: 0.8;
+    opacity: 0.9;
     position: absolute;
     left: 46%;
-    top: 59%;
-  
+    top: 63%;
+    box-shadow: 2px 3px 10px;
 }
 
 div.militar:hover{
@@ -673,6 +704,7 @@ div.CJ {
     position: absolute;
     left: 7%;
     top: 33%;
+    box-shadow: 2px 3px 10px;
 }
 
 
