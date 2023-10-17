@@ -55,6 +55,22 @@ header > h1{
         text-align: left;
         margin: 1%;
     }
+    h3.novoJogo{
+        color: white;
+        text-decoration: none;
+        margin-left: 25%;
+    }
+    h3.fimDeJogo{
+        color: white;
+        text-decoration: none;
+        margin-left: 65%;
+        margin-top: -2%;
+    }
+
+    h3.fimdejogo{
+        color: black;
+        text-decoration: none;
+    }
 
     body.CJ{
         background-color: var(--cor1);
@@ -64,7 +80,7 @@ header > h1{
         background-image: url(artes/city2.jfif);
         margin-left: 5%;
         margin-right: 5%;
-        padding: 45%;
+        padding: 50%;
         padding-top: 45%;
         box-shadow: 4px 4px 9px 0px rgb(0, 0, 0, 0.315);
         }

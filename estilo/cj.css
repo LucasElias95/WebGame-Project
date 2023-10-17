@@ -1,0 +1,132 @@
+@charset "UTF-8"; 
+
+@media  (max-width: 900px){
+
+@font-face {
+    font-family: 'Sedgwick Ave Display';
+    src: url(fontes/SedgwickAveDisplay-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;}
+
+:root{
+    --cor0: #f5faf7;
+    --cor1: #979393;
+    --cor2: #e71111;
+    --cor3: #070707;
+    --cor4: #c0b184;
+
+    --fonte-padrao: arial, verdana, helvetica, sans-serif;
+    --fonte-destaque:'Sedgwick Ave Display', cursive;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+    background-image: linear-gradient(to bottom, var(--cor1), var(--cor3));
+    width: 100%;
+    padding-top: 5%;   
+    padding-bottom:5%;
+}
+
+header > h1{
+    font-family: var(--fonte-destaque);
+    color: var(--cor4);
+    text-align: center;
+    font-weight: normal;
+    font-size: 3em;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.73);}
+
+    header > P{
+        text-align: center;
+        font-family: var(--fonte-padrao);
+        font-size: 1em;
+        color: white;
+        max-width: 920px;
+        margin: auto;
+        padding-right: 15px;
+        padding-left: 20px;
+        text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.373);
+    }
+    p.personagem{
+        font-family: var(--fonte-destaque);
+        color: var(--cor3);
+    }
+
+    
+
+    main{
+        
+        min-width: 25%;
+        max-width: 100%;        
+        padding-top:1px;
+        box-shadow: 4px 4px 9px 0px rgb(0, 0, 0, 0.315);
+        }
+
+h2.CJ{
+    text-align: left;
+    margin: 1%;
+}
+
+body.CJ{
+    background-color: var(--cor1);
+    opacity: 0.9;
+}
+main.CJ{
+    background-image: url(artes/city2.jfif);
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 4%;
+    padding-top: 600%;
+    box-shadow: 4px 4px 9px 0px rgb(0, 0, 0, 0.315);
+    }
+
+p.CJ{
+margin: 1%;
+}
+
+div.CJ {
+    margin-left: 10%;
+    text-align: center;
+    width: 70%;
+    background-color: var(--cor0);
+    opacity: 0.9;
+    position: absolute;
+    left: 7%;
+    top: 33%;
+    box-shadow: 2px 3px 10px;
+}
+
+
+h3.fimdejogo{
+    color: black;
+    text-decoration: none;
+}
+
+h3.novoJogo{
+    color: white;
+    text-decoration: none;
+    margin-left: 2%;
+}
+h3.fimDeJogo{
+    color: white;
+    text-decoration: none;
+    margin-left: 65%;
+    margin-top: -5%;
+}
+
+
+
+
+footer.CJ{
+    padding-bottom: 2%;
+    clear: both;
+    padding-top: 2%;
+    background-color: #070707;
+    color: white;
+    text-align: center;
+    font-size: 1em;
+    
+}
