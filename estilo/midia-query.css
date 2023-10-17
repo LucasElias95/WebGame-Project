@@ -77,3 +77,47 @@ footer{
     
     
 }
+
+h1.fimdejogo{
+    opacity: 0.9;
+    background-color: var(--cor1);
+    margin-left: 25%;
+    margin-top: 10%;
+    color: var(--cor3);
+    max-width: 50%;
+    font-family: var(--fonte-destaque);
+    text-align: center;
+}
+h2.fimdejogo{
+    opacity: 0.9;
+    background-color: var(--cor1);
+    margin-left: 25%;
+    color: var(--cor3);
+    max-width: 50%;
+    font-family: var(--fonte-destaque);
+    text-align: center;
+}
+
+h3.fimdejogo{
+    opacity: 0.9;
+    background-color: var(--cor1);
+    font-family: var(--fonte-destaque);
+    color: var(--cor2);
+    max-width: 50%;
+    margin-left: 25%;
+    text-decoration-line: var(--cor1);
+}
+
+div.textoFimDeJogo{
+    opacity: 0.9;
+    background-color: var(--cor1);
+    margin-left: 25%;
+    color: var(--cor3);
+    max-width: 50%;
+    font-family: var(--fonte-destaque);
+    text-align: center;
+}
+
+span.dinheiro{
+    color: green;
+}
